@@ -11,44 +11,28 @@ export async function GET(req) {
       );
     }
 
-    // Fetch the user with wallet
-    const dbUser = await prisma.user.findUnique({
-      where: { id: user.id },
-      include: {
-        wallet: true,
-      },
-    });
-
-    if (!dbUser) {
-      return new Response(
-        JSON.stringify({ error: 'User not found' }),
-        { status: 404 }
-      );
-    }
-
-    // Ensure wallet exists (fallback to zeros)
-    const wallet = dbUser.wallet || {
+    // If wallet missing, fallback to zeros
+    const wallet = user.wallet || {
       usdtAvailable: 0,
       usdtDeposited: 0,
       usdtWithdrawn: 0,
     };
 
     // Calculate progressing balance
-    const progressing =
-      wallet.usdtDeposited - wallet.usdtAvailable - wallet.usdtWithdrawn;
+    const progressing = wallet.usdtDeposited - wallet.usdtAvailable - wallet.usdtWithdrawn;
 
     return new Response(
       JSON.stringify({
         user: {
-          id: dbUser.id,
-          email: dbUser.email,
-          fullName: dbUser.fullName,
-          mobile: dbUser.mobile,
+          id: user.id,
+          email: user.email,
+          fullName: user.fullName,
+          mobile: user.mobile,
           wallet: {
             total: wallet.usdtDeposited,
             available: wallet.usdtAvailable,
             withdrawn: wallet.usdtWithdrawn,
-            progressing: progressing < 0 ? 0 : progressing, // avoid negatives
+            progressing: progressing < 0 ? 0 : progressing,
           },
         },
       }),

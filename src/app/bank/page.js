@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Trash2 } from "lucide-react"; 
+import { useToast } from '@/app/components/ToastProvider';
+import { useConfirm } from '@/app/components/ConfirmProvider';
 
 export default function BankPage() {
   const [banks, setBanks] = useState([]);
@@ -11,6 +13,8 @@ export default function BankPage() {
   const [message, setMessage] = useState("");
   const [selectedBankId, setSelectedBankId] = useState(null);
   const router = useRouter();
+  const { showToast } = useToast();
+  const { confirm } = useConfirm();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -74,9 +78,13 @@ export default function BankPage() {
   const handleDeleteBank = async (id) => {
     const token = localStorage.getItem("token");
     if (!token) {
-      alert("You must be logged in.");
+      showToast("You must be logged in.", "error");
       return;
     }
+
+    // confirm deletion with modal
+    const confirmed = await confirm("Are you sure you want to delete this bank account?");
+    if (!confirmed) return;
 
     try {
       const res = await fetch("/api/bank-card", {
@@ -91,7 +99,7 @@ export default function BankPage() {
       const data = await res.json();
 
       if (!res.ok) {
-        alert(data.message || "Failed to delete bank account.");
+        showToast(data.message || "Failed to delete bank account.", "error");
         return;
       }
 
@@ -101,9 +109,11 @@ export default function BankPage() {
         localStorage.removeItem("selectedBank");
         setSelectedBankId(null);
       }
+
+      showToast("Bank account deleted.", "success");
     } catch (err) {
       console.error(err);
-      alert("Something went wrong. Please try again later.");
+      showToast("Something went wrong. Please try again later.", "error");
     }
   };
 

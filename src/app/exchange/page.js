@@ -1,12 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-
-import Slider from "react-slick";
-
-
-
-//import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -16,9 +10,157 @@ export default function Exchange() {
   const [checkingAuth, setCheckingAuth] = useState(true);
   const [timeLeft, setTimeLeft] = useState(52);
   
+  const [rate, setRate] = useState(107);
+  const [withdrawMin, setWithdrawMin] = useState(50);
+  const [usdtAmount, setUsdtAmount] = useState("");
+  const [inrAmount, setInrAmount] = useState("");
+  const [banks, setBanks] = useState([]);
+  const [selectedBankId, setSelectedBankId] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [balance, setBalance] = useState(0);
+
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const res = await fetch('/api/settings');
+        if (res.ok) {
+          const data = await res.json();
+          if (data.settings) {
+            if (data.settings.rate) setRate(data.settings.rate);
+            if (data.settings.withdrawMin) setWithdrawMin(data.settings.withdrawMin);
+          }
+        }
+      } catch (err) {
+        console.error('Failed to fetch settings:', err);
+      }
+    };
+    fetchSettings();
+  }, []);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+      fetchBanks(token);
+      fetchBalance(token);
+    }
+    setCheckingAuth(false);
+  }, []);
+
+  const fetchBanks = async (token) => {
+    try {
+      const res = await fetch("/api/bank-card", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setBanks(data.banks || []);
+        if (data.banks && data.banks.length > 0) {
+          setSelectedBankId(data.banks[0].id);
+        }
+      }
+    } catch (err) {
+      console.error("Failed to fetch banks:", err);
+    }
+  };
+
+  const fetchBalance = async (token) => {
+    try {
+      const res = await fetch("/api/wallet", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setBalance(data.usdtAvailable || 0);
+      }
+    } catch (err) {
+      console.error("Failed to fetch balance:", err);
+    }
+  };
+
+  const handleUsdtChange = (e) => {
+    const val = e.target.value;
+    setUsdtAmount(val);
+    if (val && !isNaN(val)) {
+      setInrAmount((parseFloat(val) * rate).toFixed(2));
+    } else {
+      setInrAmount("");
+    }
+  };
+
+  const handleInrChange = (e) => {
+    const val = e.target.value;
+    setInrAmount(val);
+    if (val && !isNaN(val)) {
+      setUsdtAmount((parseFloat(val) / rate).toFixed(2));
+    } else {
+      setUsdtAmount("");
+    }
+  };
+
+  const handleSell = async () => {
+    if (!isLoggedIn) {
+      router.push("/login");
+      return;
+    }
+    if (!usdtAmount || parseFloat(usdtAmount) <= 0) {
+      setMessage("Please enter a valid amount.");
+      return;
+    }
+    if (parseFloat(usdtAmount) < withdrawMin) {
+      setMessage(`Minimum sell amount is ${withdrawMin} USDT.`);
+      return;
+    }
+    if (parseFloat(usdtAmount) > balance) {
+      setMessage(`Insufficient balance. Available: ${balance} USDT. Please add funds.`);
+      return;
+    }
+    if (!selectedBankId) {
+      setMessage("Please select a bank account.");
+      return;
+    }
+
+    setLoading(true);
+    setMessage("");
+
+    try {
+      const token = localStorage.getItem("token");
+      const selectedBank = banks.find(b => b.id === selectedBankId);
+      
+      const res = await fetch("/api/admin/selling-request", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ 
+          bank: selectedBank, 
+          amount: parseFloat(usdtAmount) 
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setMessage("✅ Selling request submitted successfully!");
+        setUsdtAmount("");
+        setInrAmount("");
+        fetchBalance(token); // Refresh balance
+      } else {
+        setMessage(data.error || "Failed to submit request.");
+      }
+    } catch (err) {
+      console.error(err);
+      setMessage("Error submitting request.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     if (timeLeft <= 0) {
-      window.location.reload();
+      // window.location.reload(); // Avoid reload loop if logic is flawed
       return;
     }
 
@@ -29,19 +171,7 @@ export default function Exchange() {
     return () => clearInterval(timer); 
   }, [timeLeft]);
 
-
- 
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      setIsLoggedIn(true);
-    }
-    setCheckingAuth(false);
-  }, []);
-
   if (checkingAuth) return null;
-
 
   return (
     <div>
@@ -69,7 +199,7 @@ export default function Exchange() {
           <div className="page-wrapper page-wrapper-ex" style={{padding:0}}>
             <div className="mainHeadExchange">
               <p className="">Platform price</p>
-              <h3>1 USDT = INR 107</h3>
+              <h3>1 USDT = INR {rate}</h3>
             </div>
 
             <div style={{padding: '10px 10px 14px 16px'}}>
@@ -82,7 +212,8 @@ export default function Exchange() {
                     <input
                       type="number"
                       placeholder="Please enter the amount"
-                      name="amt"           
+                      value={usdtAmount}
+                      onChange={handleUsdtChange}
                       style={{
                         width: "100%",
                         paddingRight: "50px",
@@ -109,7 +240,14 @@ export default function Exchange() {
                       <img src="/image/uic.png" className="icon" /> USDT
                     </div>                                
                   </div>
-                  <div className="dflex avail"><a href="#" style={{fontSize: '12px', fontWeight: 500, marginTop:'5px',color:'#06b58f'}}>Deposit</a></div>     
+                  <div className="dflex avail">
+                    <Link href="/USDT-deposit" style={{fontSize: '12px', fontWeight: 500, marginTop:'5px',color:'#06b58f'}}>
+                      Deposit
+                    </Link>
+                    <span style={{fontSize: '12px', color: '#666', marginLeft: 'auto'}}>
+                      Available: {balance.toFixed(2)} USDT
+                    </span>
+                  </div>     
 
                   <div className="middleSection">
                         <div className=""></div>
@@ -124,7 +262,8 @@ export default function Exchange() {
                     <input
                       type="number"
                       placeholder="0.00"
-                      name="amt"           
+                      value={inrAmount}
+                      onChange={handleInrChange}
                       style={{
                         width: "100%",
                         paddingRight: "50px",
@@ -157,7 +296,8 @@ export default function Exchange() {
                     </p>
                     <div className="select-amt" style={{ position: "relative",background: '#fff',margin: '0px 0 20px' }}>
                     <select         
-                      name="amt"  
+                      value={selectedBankId}
+                      onChange={(e) => setSelectedBankId(e.target.value)}
                       className="form-control"         
                       style={{
                         width: "100%",
@@ -172,12 +312,43 @@ export default function Exchange() {
                         padding: '10px 0'                      
                       }}
                     >   
-                    <option>Please add bank account first</option>
+                      {banks.length > 0 ? (
+                        banks.map((bank) => (
+                          <option key={bank.id} value={bank.id}>
+                            {bank.bankName} - {bank.accountNo}
+                          </option>
+                        ))
+                      ) : (
+                        <option value="">Please add bank account first</option>
+                      )}
                     </select>
                                                   
                   </div>
 
-                  <div className="login-bx" style={{marginBottom:"5px"}}><button className="login-btn" style={{backgroundColor: '#10a992', cursor: 'pointer'}}>SELL USDT</button></div>
+                  {message && (
+                    <p style={{ 
+                      color: message.includes('✅') ? 'green' : 'red', 
+                      fontSize: '12px', 
+                      marginBottom: '10px',
+                      textAlign: 'center' 
+                    }}>
+                      {message}
+                    </p>
+                  )}
+
+                  <div className="login-bx" style={{marginBottom:"5px"}}>
+                    <button 
+                      className="login-btn" 
+                      onClick={handleSell}
+                      disabled={loading}
+                      style={{
+                        backgroundColor: loading ? '#ccc' : '#10a992', 
+                        cursor: loading ? 'not-allowed' : 'pointer'
+                      }}
+                    >
+                      {loading ? 'Processing...' : 'SELL USDT'}
+                    </button>
+                  </div>
             </section>
 
             <section className="section-4">

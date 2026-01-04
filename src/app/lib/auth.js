@@ -44,6 +44,7 @@ export async function getCurrentUser(req) {
 
     const user = await prisma.user.findUnique({
       where: { id: payload.id },
+      include: { wallet: true },
     });
 
     return user || null;

@@ -4,8 +4,8 @@ import bcrypt from "bcryptjs";
 const prisma = new PrismaClient();
 
 async function main() {
-  const email = "admin@example.com";
-  const password = "Admin123!"; // choose a strong password
+  const email = "admin@angelxsuper.com";
+  const password = "Admin@123"; // as requested
 
   const hashed = await bcrypt.hash(password, 10);
 
@@ -16,7 +16,9 @@ async function main() {
     });
     console.log("Admin user created:", email);
   } else {
-    console.log("Admin already exists:", email);
+    // If admin exists but password is different (dev convenience), update hashed password
+    await prisma.admin.update({ where: { email }, data: { password: hashed } });
+    console.log("Admin exists. Password updated for:", email);
   }
 }
 

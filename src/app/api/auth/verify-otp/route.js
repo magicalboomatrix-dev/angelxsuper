@@ -3,7 +3,9 @@ import jwt from 'jsonwebtoken';
 
 export async function POST(req) {
   try {
-    const { email, otp } = await req.json();
+    const body = await req.json();
+    const email = body.email?.toString().trim();
+    const otp = body.otp?.toString().trim();
 
     if (!email || !otp) {
       return new Response(JSON.stringify({ error: 'Email and OTP are required' }), { status: 400 });
@@ -12,11 +14,16 @@ export async function POST(req) {
     // Find user in DB
     const user = await prisma.user.findUnique({ where: { email } });
 
-    if (!user || user.otp !== otp) {
+    if (!user) {
       return new Response(JSON.stringify({ error: 'Invalid OTP' }), { status: 401 });
     }
 
-    if (user.otpExpiry < new Date()) {
+    // Compare trimmed strings to avoid whitespace/type issues
+    if (user.otp?.toString().trim() !== otp) {
+      return new Response(JSON.stringify({ error: 'Invalid OTP' }), { status: 401 });
+    }
+
+    if (!user.otpExpiry || user.otpExpiry < new Date()) {
       return new Response(JSON.stringify({ error: 'OTP expired' }), { status: 401 });
     }
 
@@ -52,8 +59,11 @@ export async function POST(req) {
       console.log(`Wallet created for userId: ${user.id}`);
     }
 
-    // Redirect logic
-    const redirectTo = user.fullName && user.mobile ? '/admin/dashboard' : '/complete-profile';
+    // Redirect logic: if profile is complete (fullName and mobile) go to home, else complete profile
+    const redirectTo = user.fullName && user.mobile ? '/home' : '/complete-profile';
+
+    // Include wallet and token; helpful debug logs
+    console.log(`User ${user.email} verified via OTP. Redirecting to ${redirectTo}`);
 
     return new Response(
       JSON.stringify({

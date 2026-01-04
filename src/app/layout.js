@@ -15,8 +15,7 @@ export default function Layout({ children }) {
   return (
     <html lang="en">
       <head>
-      <link rel="icon" type="image/x-icon" href="/images/fav.png" />
-
+        <link rel="icon" type="image/x-icon" href="/images/fav.png" />
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet"
@@ -25,6 +24,7 @@ export default function Layout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Monda:wght@400..700&display=swap"
           rel="stylesheet"
         />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
         <meta name="description" content="" />
       </head>

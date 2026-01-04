@@ -2,9 +2,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useToast } from '@/app/components/ToastProvider';
 
 export default function LoginAccount() {
   const router = useRouter();
+  const { showToast } = useToast();
   const [email, setEmail] = useState('');
   const [otp, setOtp] = useState('');
   const [otpSent, setOtpSent] = useState(false);
@@ -85,25 +87,36 @@ export default function LoginAccount() {
       if (res.ok) {
         setOtpSent(true);
         setMessage('✅ OTP sent! Check your email.');
+
         otpInputRef.current?.focus();
 
         const expiry = Date.now() + 30 * 1000;
         localStorage.setItem('otpCooldownExpiry', expiry);
         setCooldown(30);
       } else {
-        if (res.status === 401) router.replace('/login'); // auto redirect on unauthorized
-        else setError(data.error || 'Failed to send OTP');
+        // Don't force-redirect on 401 when sending OTP; show readable message instead
+        const err = data.error || 'Failed to send OTP';
+        showToast(err, 'error');
+        setError(err);
       }
     } catch (err) {
       console.error(err);
       setError('Something went wrong');
+      showToast('Something went wrong', 'error');
     } finally {
       setLoadingOtp(false);
     }
   };
 
   const handleVerifyOtp = async () => {
-    if (!email || !otp) return setError('Please enter email and OTP');
+    if (!email) {
+      setError('Please enter your email');
+      return;
+    }
+    if (!otp) {
+      setError('Please enter the OTP');
+      return;
+    }
 
     setError('');
     setMessage('');
@@ -119,14 +132,20 @@ export default function LoginAccount() {
       const data = await res.json();
 
       if (res.ok) {
-        if (data.token) localStorage.setItem('token', data.token);
-        setMessage('OTP verified! Loging In...');
+        if (data.token) {
+          localStorage.setItem('token', data.token);
+        }
+
+        setMessage('OTP verified! Logging In...');
         setTimeout(() => {
-          window.location.href = data.redirectTo || '/home';
-        }, 1500);
+          // Use router.replace to navigate within the app (safer than full reload)
+          router.replace(data.redirectTo || '/home');
+        }, 500);
       } else {
-        if (res.status === 401) router.replace('/login'); // auto redirect on unauthorized
-        else setError(data.error || 'Invalid OTP');
+        // Don't redirect on 401: show the error so the user can re-try OTP
+        const err = data.error || 'Invalid OTP';
+        showToast(err, 'error');
+        setError(err);
       }
     } catch (err) {
       console.error(err);
@@ -177,6 +196,7 @@ export default function LoginAccount() {
                       value={otp}
                       ref={otpInputRef}
                       onChange={(e) => setOtp(e.target.value)}
+                      onKeyDown={(e) => { if (e.key === 'Enter') handleVerifyOtp(); }}
                     />
                     <button
                       type="button"
@@ -201,7 +221,7 @@ export default function LoginAccount() {
                   type="button"
                   className="login-btn"
                   onClick={handleVerifyOtp}
-                  disabled={!otpSent || loadingVerify}
+                  disabled={loadingVerify}
                 >
                   {loadingVerify ? 'Verifying...' : 'Sign Up / Login'}
                 </button>

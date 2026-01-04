@@ -23,7 +23,26 @@ export default function AddBank() {
   const [successMessage, setSuccessMessage] = useState("");
   const [amount, setAmount] = useState("");
   const [balance, setBalance] = useState(0);
-  const rate = 102;
+  const [rate, setRate] = useState(102);
+  const [withdrawMin, setWithdrawMin] = useState(50);
+
+  useEffect(() => {
+    fetchSettings();
+  }, []);
+
+  const fetchSettings = async () => {
+    try {
+      const res = await fetch('/api/settings');
+      if (!res.ok) return;
+      const data = await res.json();
+      if (data.settings) {
+        setRate(data.settings.rate ?? 102);
+        setWithdrawMin(data.settings.withdrawMin ?? 50);
+      }
+    } catch (err) {
+      console.error('Failed to fetch settings:', err);
+    }
+  };
 
   const selectedBank = banks.find((b) => b.id === selectedBankId);
 
@@ -101,8 +120,13 @@ export default function AddBank() {
       setSuccessMessage(""); // clear success
       return;
     }
-    if (100 > amt) {
-      setMessage("❌ Minimum 100 USDT, please add funds to complete the transaction.");
+    if (withdrawMin > amt) {
+      setMessage(`❌ Minimum ${withdrawMin} USDT.`);
+      setSuccessMessage("");
+      return;
+    }
+    if (amt > balance) {
+      setMessage(`❌ Insufficient balance. You have ${balance} USDT. Please add funds.`);
       setSuccessMessage("");
       return;
     }
@@ -146,7 +170,7 @@ export default function AddBank() {
     return (
       <div className="page-wrappers">
         <div className="loader" style={{ textAlign: "center", marginTop: "40px" }}>
-          <Image src="/images/loading.webp" alt="loader" width={50} height={50} priority />
+          <Image src="/images/loading.webp" alt="loader" width={50} height={50} priority unoptimized />
         </div>
       </div>
     );

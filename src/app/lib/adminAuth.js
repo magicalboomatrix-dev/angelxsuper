@@ -14,3 +14,15 @@ export function verifyAdminToken(req) {
     return null;
   }
 }
+
+// Verify admin token from cookie (used by server-side admin APIs)
+export function verifyAdminCookie(req) {
+  try {
+    const token = req.cookies.get("adminToken")?.value;
+    if (!token) return null;
+    const decoded = jwt.verify(token, JWT_SECRET);
+    return decoded;
+  } catch {
+    return null;
+  }
+}
