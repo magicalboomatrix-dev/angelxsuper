@@ -238,20 +238,6 @@ export default function AdminLoginPage() {
             >
               {loading ? "🔄 Signing in..." : "🔓 Sign In"}
             </button>
-
-            {/* Demo Credentials */}
-            <div style={{
-              background: "#f3f4f6",
-              padding: "16px",
-              borderRadius: "12px",
-              fontSize: "13px",
-              textAlign: "center",
-              color: "#6b7280"
-            }}>
-              <p style={{ fontWeight: "600", marginBottom: "6px", color: "#374151" }}>Demo Credentials:</p>
-              <p style={{ margin: "4px 0" }}>Email: admin@angelxsuper.com</p>
-              <p style={{ margin: "4px 0" }}>Password: Admin@123</p>
-            </div>
           </form>
         </div>
 
