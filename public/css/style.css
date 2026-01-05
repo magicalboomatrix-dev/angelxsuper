@@ -793,7 +793,7 @@ footer.footer {
 }
 
 .page-wrappers.home-wrappers {
-    background-image: url(../images/home-bg1.png);
+    background-image: url(../image/home-bg1.png);
     background-color: #fff;
     background-repeat: no-repeat;
     background-position: left top;
@@ -860,7 +860,7 @@ footer.footer {
 }
 
 .page-wrappers.home-wrappers .page-wrapper section.section-2a {
-    background-image: url(../images/home-bg2.png);
+    background-image: url(../image/home-bg2.png);
     background-position: left top;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -924,7 +924,7 @@ footer.footer {
 }
 
 .page-wrappers.home-wrappers section.section-3 .inside {
-    background-image: url(../images/home-bg3.png);
+    background-image: url(../image/home-bg3.png);
     background-position: left top;
     background-repeat: no-repeat;
     background-size: 100%;
