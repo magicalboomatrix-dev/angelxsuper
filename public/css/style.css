@@ -399,7 +399,7 @@ section.section-1a.banner-img {
 
 .page-wrapper-ex .login-bx .login-btn {
     border: 0;
-    background: #1d1c20;
+    background: #10a992;
     color: #fff;
     padding: 11px 0px;
     border-radius: 40px;
@@ -612,6 +612,7 @@ section.section-4 .dflex-out .rw {
 
 .back-btn a img {
     max-width: 20px;
+	height: auto;
 }
 
 .back-btn a {
@@ -1443,7 +1444,7 @@ footer.footer .bx a.tb .icon img.act {
 
 .pricerefBx.pricerefBx-01 {
     padding: 10px;
-    background: #272727;
+    background: #10a992;
 }
 
 .pricerefBx.pricerefBx-01 h4 {
@@ -1454,7 +1455,7 @@ footer.footer .bx a.tb .icon img.act {
 }
 
 .page-wrapper-ex  .pricerefBx.pricerefBx-01 table th {
-    background: #ffd016;
+    background: #85dbba;
     font-weight: normal;
     padding: 7px 10px 7px 10px;
     color: #000;
