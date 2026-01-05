@@ -69,6 +69,7 @@ p {
     height: 100vh;
     box-sizing: border-box;
 	overflow: hidden;
+	margin-bottom: 50px;
 }
 
 .page-wrapper {
