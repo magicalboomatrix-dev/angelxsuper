@@ -1618,6 +1618,7 @@ section.section-4 .dflex-out .rw span.black {
 
 .threeSection a {
     color: #333 !important;
+	text-decoration: none;
 }
 
 .threeSection p {
@@ -1868,7 +1869,7 @@ section.section-4 .dflex-out .rw span.black {
 }
 
 .ifLoginMainDe p {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
     color: #191919;
 }
@@ -1889,11 +1890,6 @@ section.section-4 .dflex-out .rw span.black {
     font-weight: 400;
     padding-bottom: 2px;
     display: block;
-}
-.ifLoginMainDe p {
-    font-size: 10px;
-    font-weight: 500;
-    color: #191919;
 }
 
 .ifLoginMainDe img {
