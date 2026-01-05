@@ -479,6 +479,7 @@ section.section-4 .dflex-out {
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
+	gap: 10px;
 }
 
 section.section-4 .dflex-out .dflex {
@@ -1634,7 +1635,7 @@ section.section-4 .dflex-out .rw span.black {
 }
 
 .lefttwo {
-    width: 49%;
+    width: 43%;
     background-color: #fff;
     padding: 10px;
     border-radius: 8px;
