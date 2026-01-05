@@ -180,7 +180,7 @@ export default function Exchange() {
           <header className="header" style={{padding: '9px 11px 5px 11px'}}>
             <div className="left">
               <Image                
-                              src="/image/grn_logo.png"
+                              src="/image/name_logo.png"
                               alt="logo"
                               width={130}
                               height={18}
@@ -200,7 +200,7 @@ export default function Exchange() {
             <div className="mainHeadExchange">
               <p className="">Platform price</p>
               <h3>1 USDT = INR {rate}</h3>
-              <div className="logoImg"><img src="/image/name_logo_w.png" /></div>                   
+              <div className="logoImg"><img src="/image/grn_logo.png" /></div>                   
             </div>
 
             <div style={{padding: '10px 10px 14px 16px'}}>
