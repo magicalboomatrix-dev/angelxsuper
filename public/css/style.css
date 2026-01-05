@@ -16,7 +16,7 @@
          url('fonts/CorsicaSXSemiBold.woff') format('woff'),
          url('fonts/CorsicaSXSemiBold.ttf') format('truetype'),
          url('fonts/CorsicaSXSemiBold.svg#CorsicaSXSemiBold') format('svg');
-}
+} 
  */
 
 body {
@@ -1032,7 +1032,7 @@ section.section-2.reffer .bx .arw img {
 
 .select-amt {
     background: #f8f9fc;
-    padding: 5px 15px;
+    padding: 5px 15px 5px 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
