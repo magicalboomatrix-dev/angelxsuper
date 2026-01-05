@@ -15,7 +15,7 @@ export default function Layout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" type="image/x-icon" href="/images/fav.png" />
+        <link rel="icon" type="image/x-icon" href="/image/logo-icon.png" />
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet"
