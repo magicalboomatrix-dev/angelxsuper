@@ -134,7 +134,7 @@ export default function Index() {
                 </Link>
               </div>
               <div className="">
-                <Link href="/sell-usdt">
+                <Link href="/exchange">
                   <img src="/image/withdraw.png" alt="" />
                   <p>Sell USDT</p>
                 </Link>
