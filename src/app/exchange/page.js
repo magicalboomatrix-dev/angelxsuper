@@ -244,7 +244,7 @@ export default function Exchange() {
                     <Link href="/USDT-deposit" style={{fontSize: '12px', fontWeight: 500, marginTop:'5px',color:'#06b58f'}}>
                       Deposit
                     </Link>
-                    <span style={{fontSize: '12px', color: '#666', marginLeft: 'auto'}}>
+                    <span style={{fontSize: '12px', color: '#666', marginLeft: 'auto',paddingTop: '5px',paddingLeft: '5px'}}>
                       Available: {balance.toFixed(2)} USDT
                     </span>
                   </div>     
