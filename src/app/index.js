@@ -92,7 +92,31 @@ export default function Index() {
         </header>
 
         <div className="page-wrapper">
+            <div className="ifLoginMainDe">
+             <div className="inner">
+               <span className="labelTxtMain">Available Balance</span>
+               <p style={{ fontSize: 12, fontWeight: "600 !important" }}>
+                 <span style={{ fontSize: 16, fontWeight: "600 !important" }} /> USDT
+               </p>
+             </div>
+             <div className="mainTwoInDiv">
+               <div style={{ width: "50%" }}>
+                 <span className="labelTxtMain">Sell Pending</span>
+                 <p>
+                   <span /> USDT
+                 </p>
+               </div>
+               <div style={{ width: "50%" }}>
+                 <span className="labelTxtMain">Deposit Pending</span>
+                 <p>
+                   <span /> USDT
+                 </p>
+               </div>
+             </div>
+             <img src="/image/wallet.png" alt="" />
+           </div>
 
+                 
             <div className="easyTradingSection">
                         <div className="texteasy">
                     <h2 className="">Easy trading quick profits</h2>
