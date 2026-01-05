@@ -189,7 +189,7 @@ export default function Exchange() {
             </div>
             <div className="right">
               <a href="https://wa.me/16723270327?text=Hello%2C%20AngleX Team!">
-              <img src="images/support-icon.png" />
+              <img src="image/support-icon.png" />
               </a>
             </div>
           </header>
