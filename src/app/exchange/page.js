@@ -180,7 +180,7 @@ export default function Exchange() {
           <header className="header" style={{padding: '9px 11px 5px 11px'}}>
             <div className="left">
               <Image                
-                              src="/image/name_logo.png"
+                              src="/image/name_logo1.png"
                               alt="logo"
                               width={130}
                               height={18}
