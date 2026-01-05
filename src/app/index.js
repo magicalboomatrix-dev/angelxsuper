@@ -76,16 +76,16 @@ export default function Index() {
                 <Image                
                 src="/image/bell.png"
                 alt="notification"
-                width={20}
-                height={20}
+                width={24}
+                height={24}
                 priority
                 /></Link>  
             <Link href="#">
                 <Image                
                 src="/image/24-hours-support.png"
                 alt="earphone"
-                width={20}
-                height={20}
+                width={24}
+                height={24}
                 priority
                 /></Link>
             </div>
