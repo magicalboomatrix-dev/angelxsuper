@@ -82,7 +82,7 @@ export default function Index() {
                 /></Link>  
             <Link href="#">
                 <Image                
-                src="/image/24-hours-support.png"
+                src="/image/support-icon.png"
                 alt="earphone"
                 width={24}
                 height={24}
