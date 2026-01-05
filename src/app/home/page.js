@@ -71,8 +71,8 @@ export default function HomePage() {
                 <Image                
                 src="/image/24-hours-support.png"
                 alt="customer"
-                width={19}
-                height={20}
+                width={24}
+                height={24}
                 priority
                 /></a>
 
@@ -80,8 +80,8 @@ export default function HomePage() {
                 <Image                
                 src="/image/settings.png"
                 alt="setting"
-                width={19}
-                height={19}
+                width={24}
+                height={24}
                 priority
                 /></Link>
             </div>
