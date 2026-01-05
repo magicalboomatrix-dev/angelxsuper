@@ -72,22 +72,22 @@ export default function Index() {
                 
             </div>
             <div className="right">
-            <a href="#">
+            <Link href="#">
                 <Image                
                 src="/image/notification.png"
                 alt="notification"
                 width={20}
                 height={20}
                 priority
-                /></a>  
-            <a href="#">
+                /></Link>  
+            <Link href="#">
                 <Image                
                 src="/image/earphone.png"
                 alt="earphone"
                 width={20}
                 height={20}
                 priority
-                /></a>
+                /></Link>
             </div>
         </header>
 
@@ -128,22 +128,22 @@ export default function Index() {
 
             <div className="threeSection">
               <div className="">
-                <a href="/USDT-deposit">
+                <Link href="/USDT-deposit">
                   <img src="/image/deposit.png" alt="" />
                   <p>Deposit</p>
-                </a>
+                </Link>
               </div>
               <div className="">
-                <a href="/sell-usdt">
+                <Link href="/sell-usdt">
                   <img src="/image/withdraw.png" alt="" />
                   <p>Sell USDT</p>
-                </a>
+                </Link>
               </div>
               <div className="">
-                <a href="/bank">
+                <Link href="/bank">
                   <img src="/image/bankcard.png" alt="" />
                   <p>Add Bank A/C</p>
-                </a>
+                </Link>
               </div>
 
               
