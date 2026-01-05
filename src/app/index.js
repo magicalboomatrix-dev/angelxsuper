@@ -74,7 +74,7 @@ export default function Index() {
             <div className="right">
             <Link href="#">
                 <Image                
-                src="/image/notification.png"
+                src="/image/bell.png"
                 alt="notification"
                 width={20}
                 height={20}
@@ -82,7 +82,7 @@ export default function Index() {
                 /></Link>  
             <Link href="#">
                 <Image                
-                src="/image/earphone.png"
+                src="/image/24-hours-support.png"
                 alt="earphone"
                 width={20}
                 height={20}
