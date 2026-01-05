@@ -95,7 +95,7 @@ export default function Index() {
             <div className="ifLoginMainDe">
              <div className="inner">
                <span className="labelTxtMain">Available Balance</span>
-               <p style={{ fontSize: 12, fontWeight: "600 !important" }}>
+               <p style={{ fontSize: 12, fontWeight: "400 !important" }}>
                  <span style={{ fontSize: 16, fontWeight: "600 !important" }} /> USDT
                </p>
              </div>
@@ -118,29 +118,29 @@ export default function Index() {
 
                  
             <div className="easyTradingSection">
-                        <div className="texteasy">
-                    <h2 className="">Easy trading quick profits</h2>
+                <div className="texteasy">
+                    <h2>Easy trading quick profits</h2>
                     <p>Ensuring every user maximizer their <br/> investment return</p>
-                    <button >Sign up <i className="bi bi-arrow-right-short"></i></button>
+                    <button>Sign up <i className="bi bi-arrow-right-short"></i></button>
                 </div>
                 <img src="/image/main_image.png" />
             </div>
 
             <div className="threeSection">
               <div className="">
-                <a href="#">
+                <a href="/USDT-deposit">
                   <img src="/image/deposit.png" alt="" />
                   <p>Deposit</p>
                 </a>
               </div>
               <div className="">
-                <a href="#">
+                <a href="/sell-usdt">
                   <img src="/image/withdraw.png" alt="" />
                   <p>Sell USDT</p>
                 </a>
               </div>
               <div className="">
-                <a href="#">
+                <a href="/bank">
                   <img src="/image/bankcard.png" alt="" />
                   <p>Add Bank A/C</p>
                 </a>
