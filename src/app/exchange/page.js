@@ -360,7 +360,7 @@ export default function Exchange() {
                 <div className="bx">
                   <div className="dflex">
                     <img src="images/wazirx.png" />{" "}
-                    <Link href="/exchange">
+                    <Link href="https://wazirx.com/" target="_blank">
                       <img src="images/grn-right-arw.png" />
                     </Link>
                   </div>
@@ -379,7 +379,7 @@ export default function Exchange() {
                 <div className="bx">
                   <div className="dflex">
                     <img src="images/binance.png" />{" "}
-                    <Link href="/exchange">
+                    <Link href="https://p2p.binance.com/en/trade/BUY/USDT?fiat=INR&payment=ALL" target="_blank">
                       <img src="images/grn-right-arw.png" />
                     </Link>
                   </div>
