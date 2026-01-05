@@ -69,7 +69,7 @@ export default function HomePage() {
               { /* <img src="image/24-hours-support.png" /> */ }
               <a href="https://wa.me/16723270327?text=Hello%2C%20AngleX Team!">
                 <Image                
-                src="/image/24-hours-support.png"
+                src="/image/support-icon.png"
                 alt="customer"
                 width={24}
                 height={24}
