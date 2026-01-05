@@ -1852,3 +1852,49 @@ section.section-4 .dflex-out .rw span.black {
 .middleSection img {
     width: 25px;
 }
+
+.ifLoginMainDe {
+    border: 1px solid #e3e2e2;
+    border-radius: 12px;
+    padding: 12px;
+    position: relative;
+}
+
+.labelTxtMain {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+}
+
+.ifLoginMainDe p {
+    font-size: 10px;
+    font-weight: 500;
+    color: #191919;
+}
+
+.ifLoginMainDe p span {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Roboto Condensed", sans-serif !important;
+}
+
+.mainTwoInDiv {
+    display: flex;
+}
+.labelTxtMain {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+}
+.ifLoginMainDe p {
+    font-size: 10px;
+    font-weight: 500;
+    color: #191919;
+}
+
+.ifLoginMainDe img {
+    width: 75px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
