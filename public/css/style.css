@@ -1908,6 +1908,7 @@ section.section-4 .dflex-out .rw span.black {
     display: flex;
     align-items: center;
     justify-content: space-between;
+	margin-bottom: 19px;
 }
 
 .select-tbs .tb {
@@ -1937,7 +1938,7 @@ section.section-4 .dflex-out .rw span.black {
 }
 
 .select-tbs .tb.active {
-    border: 2px solid #fdd830;
+    border: 2px solid #10a992;
     /* overflow: hidden; */
 	background: #fff;
 }
@@ -1953,5 +1954,7 @@ section.section-4 .dflex-out .rw span.black {
     cursor: pointer;
     opacity: 0;
 }
-
+.no-empty-page .inner-space p.title {
+    padding-bottom: 8px;
+}
 
