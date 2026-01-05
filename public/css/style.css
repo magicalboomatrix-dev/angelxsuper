@@ -1899,3 +1899,12 @@ section.section-4 .dflex-out .rw span.black {
     top: 15px;
     right: 20px;
 }
+
+.mainHeadExchange .logoImg > img {
+    width: 60%;
+}
+
+.mainHeadExchange .logoImg {
+    padding-top: 30px;
+}
+
