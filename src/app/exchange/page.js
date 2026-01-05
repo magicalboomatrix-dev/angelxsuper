@@ -288,7 +288,7 @@ export default function Exchange() {
                         zIndex:9
                       }}
                     >
-                      <img src="/image/inr.webp" className="icon" style={{maxWidth:"28px"}} /> INR
+                      <img src="/image/inr1.png" className="icon" style={{maxWidth:"28px"}} /> INR
                     </div>                                
                   </div>
 
