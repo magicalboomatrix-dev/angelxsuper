@@ -205,7 +205,7 @@ export default function Exchange() {
 
             <div style={{padding: '10px 10px 14px 16px'}}>
             <section className="section-3">
-              <p className="title" style={{ textAlign: "left" }}>
+              <p className="title" style={{ textAlign: "left", paddingTop: '5px' }}>
                 <b>Flash Exchange</b>
               </p>
               <p className="title ptitle">Crypto</p>
