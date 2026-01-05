@@ -1904,3 +1904,54 @@ section.section-4 .dflex-out .rw span.black {
     padding-top: 15px;
 }
 
+.select-tbs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select-tbs .tb {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 48%;
+    background: #f2f3f5;
+    padding: 10px 0;
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    border-radius: 10px;
+	overflow: hidden;
+}
+
+.select-tbs .tb img.y-icon {
+    max-width: 23px;
+    position: absolute;
+    right: 0;
+    bottom: -2px;
+	display: none;
+}
+
+.select-tbs .tb.active img.y-icon {
+    display: block;
+}
+
+.select-tbs .tb.active {
+    border: 2px solid #fdd830;
+    /* overflow: hidden; */
+	background: #fff;
+}
+
+.select-tbs .tb img.icon {
+    max-width: 25px;
+}
+
+.select-tbs .tb  input[type="radio"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+
