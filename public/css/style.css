@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap');
+
+
 /*@font-face {
     font-family: 'corsicasx6';
     src: url('fonts/corsicasx6.eot');
@@ -1861,6 +1864,7 @@ section.section-4 .dflex-out .rw span.black {
     padding: 12px;
     position: relative;
 	margin-bottom: 8px;
+	font-family: "Stack Sans Headline", sans-serif;
 }
 
 .labelTxtMain {
@@ -1873,12 +1877,13 @@ section.section-4 .dflex-out .rw span.black {
     font-size: 12px;
     font-weight: 500;
     color: #191919;
+	font-family: "Stack Sans Headline", sans-serif;
 }
 
 .ifLoginMainDe p span {
     font-size: 14px;
-    font-weight: 700;
-    font-family: "Roboto Condensed", sans-serif !important;
+    font-weight: 700;    
+	font-family: "Stack Sans Headline", sans-serif !important;
 }
 
 .mainTwoInDiv {
@@ -1891,6 +1896,7 @@ section.section-4 .dflex-out .rw span.black {
     font-weight: 400;
     padding-bottom: 2px;
     display: block;
+	font-family: "Stack Sans Headline", sans-serif;
 }
 
 .ifLoginMainDe img {
