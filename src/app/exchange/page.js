@@ -198,7 +198,7 @@ export default function Exchange() {
 
           <div className="page-wrapper page-wrapper-ex" style={{padding:0}}>
             <div className="mainHeadExchange">
-              <p className="">Platform price</p>
+              <p className="">Platform Rate</p>
               <h3>1 USDT = INR {rate}</h3>
               <div className="logoImg"><img src="/image/grn_logo.png" /></div>                   
             </div>
