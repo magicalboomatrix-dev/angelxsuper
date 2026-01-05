@@ -522,10 +522,10 @@ section.section-4 .dflex-out .text {
 
 section.section-4 .dflex-out .text span.b {
     color: #000;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 28px;
+    font-weight: 600;
     font-family: 'Geist Mono';
-	font-family: "Barlow Condensed", sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
 }
 
 section.section-4 .dflex-out .text span.rs {
@@ -533,9 +533,10 @@ section.section-4 .dflex-out .text span.rs {
 }
 
 section.section-4 .dflex-out .small {
-    padding: 5px 0;
-    font-size: 12px;
-    color: #ababab;
+    padding: 5px 0 0;
+    font-size: 16px;
+    color: #2f2f2f;
+    font-family: "Barlow Condensed", sans-serif;
 }
 
 section.section-4 .dflex-out .rw {
@@ -1555,6 +1556,8 @@ header.header.setting-header {
 
 section.section-4 .dflex-out .rw span.black {
     color: #000;
+	font-family: "Barlow Condensed", sans-serif;
+    font-size: 16px;
 }
 
 
