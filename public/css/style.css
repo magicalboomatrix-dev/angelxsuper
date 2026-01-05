@@ -794,7 +794,8 @@ footer.footer {
 }
 
 .page-wrappers.home-wrappers {
-    background-image: url(../image/home-bg1.png);
+    /*background-image: url(../image/home-bg1.png);*/
+	background-image: linear-gradient(180deg, #10a992 0%, transparent 19%, transparent 90%);
     background-color: #fff;
     background-repeat: no-repeat;
     background-position: left top;
