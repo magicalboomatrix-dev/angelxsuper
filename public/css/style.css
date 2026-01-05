@@ -1215,6 +1215,7 @@ footer.footer.footer-op1 button.button-style {
 	background: #fff;
 	display: inline-block;
     width: 100%;
+	box-sizing: border-box;
 }
 
 .page-wrappers.add-bank-page .section-1 .dflex {
@@ -1316,12 +1317,6 @@ footer.footer.footer-op1 button.button-style {
     margin: 0;
     padding: 14px 0;
     background: #ff0036;
-}
-
-.page-wrappers.deposit-amount-page.add-bank-page .section-1 {
-	background: #fff;
-	display: inline-block;
-    width: 100%;
 }
 
 .page-wrappers.add-bank-page .section-1 .dflex {
