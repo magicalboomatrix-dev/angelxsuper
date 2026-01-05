@@ -120,7 +120,7 @@ export default function USDTDeposit() {
                         onChange={() => setActiveTab('TRC20')}
                       />
                       <img src="images/tb-ic1.png" className="icon" /> TRC20
-                      <img src="images/y-tick.png" className="y-icon" />
+                      <img src="image/y-tick.png" className="y-icon" />
                     </div>
 
                     <div
@@ -134,7 +134,7 @@ export default function USDTDeposit() {
                         onChange={() => setActiveTab('ERC20')}
                       />
                       <img src="images/tb-ic2.png" className="icon" /> ERC20
-                      <img src="images/y-tick.png" className="y-icon" />
+                      <img src="image/y-tick.png" className="y-icon" />
                     </div>
                   </div>
                 </div>
