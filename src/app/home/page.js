@@ -66,7 +66,7 @@ export default function HomePage() {
           <header className="header" style={{position: "relative"}}>
             <div className="left"></div>
             <div className="right">
-              { /* <img src="images/customer-care.png" /> */ }
+              { /* <img src="image/24-hours-support.png" /> */ }
               <a href="https://wa.me/16723270327?text=Hello%2C%20AngleX Team!">
                 <Image                
                 src="/images/customer-care.png"
@@ -78,7 +78,7 @@ export default function HomePage() {
 
               <Link className='setting' href="/setting">
                 <Image                
-                src="/images/setting.png"
+                src="/image/setting.png"
                 alt="setting"
                 width={19}
                 height={19}
@@ -116,7 +116,7 @@ export default function HomePage() {
                 <div className="top">
                   <div className="lefts">
                     <div className="lf">
-                      <img src="images/xicon.png" />
+                      <img src="image/xicon1.png" />
                     </div>
                     <div className="rf">
                       <p className="ttl">
@@ -150,7 +150,7 @@ export default function HomePage() {
                 </div>
                 <div className="mid">
                   <p className="ttl">
-                    Reward <img src="images/xicon.png" />
+                    Reward <img src="image/xicon1.png" />
                   </p>
                   <p>
                     <b>0</b>
