@@ -154,7 +154,7 @@ export default function USDTDeposit() {
                         paddingRight: "50px",
                         border: "none",
                         outline: "none",
-                        fontSize: "12px",
+                        fontSize: "15px",
                         color: "#111",
                         background: "transparent",
                         zIndex: 2,
