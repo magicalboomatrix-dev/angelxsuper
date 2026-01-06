@@ -195,11 +195,7 @@ export default function Index() {
 
             <div className="twoLastSec">
               <div className="lefttwo">
-                <img
-                  src="/image/name_logo.png"
-                  alt=""
-                  style={{ width: 85, marginBottom: 8 }}
-                />
+                <div className="logo-text"><p>AngelX Super</p></div>
                 <h2
                   style={{
                     fontSize: '16px',
