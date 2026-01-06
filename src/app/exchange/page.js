@@ -188,9 +188,10 @@ export default function Exchange() {
                               />
             </div>
             <div className="right">
-              <a href="https://wa.me/16723270327?text=Hello%2C%20AngleX Team!" style={{color: "#000",fontSize: '20px'}}>
-                              {/*<img src="image/customer-support1.png" />*/}
-                                <i class="fa fa-user-circle" aria-hidden="true"></i>
+              <a href="https://wa.me/16723270327?text=Hello%2C%20AngleX Team!" >
+                              <img src="image/customer-service.svg" />
+                              {/*<i class="fa fa-user-circle" aria-hidden="true"></i>*/}
+                                  
               </a>
             </div>
           </header>
