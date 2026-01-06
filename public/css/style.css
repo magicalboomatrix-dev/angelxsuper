@@ -78,7 +78,7 @@ p {
 
 .page-wrapper {
     height: 90%;
-    padding: 20px 10px 14px 16px;
+    padding: 15px 10px 14px 16px;
     box-sizing: border-box;
     overflow: auto;
     margin: 15px 0 45px 0;
@@ -804,7 +804,7 @@ footer.footer {
 .page-wrappers.home-wrappers {
     /*background-image: url(../image/home-bg1.png);*/
 	background-image: linear-gradient(180deg, #10a992 0%, transparent 22%, transparent 90%);
-    background-color: #fff;
+    background-color: #f6f7fa;
     background-repeat: no-repeat;
     background-position: left top;
 	background-size: 100%;
@@ -1869,7 +1869,7 @@ section.section-4 .dflex-out .rw span.black {
     border-radius: 12px;
     padding: 12px;
     position: relative;
-	margin-bottom: 8px;
+	margin-bottom: 10px;
 	font-family: "Stack Sans Headline", sans-serif;
 }
 
