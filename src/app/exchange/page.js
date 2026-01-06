@@ -176,7 +176,7 @@ export default function Exchange() {
   return (
     <div>
       <main>
-        <div className="page-wrappers">
+        <div className="page-wrappers" style={{background: '#f6f7fa'}}>
           <header className="header" style={{padding: '9px 11px 5px 11px'}}>
             <div className="left">
               <Image                
