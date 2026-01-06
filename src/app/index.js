@@ -82,7 +82,7 @@ export default function Index() {
                 /></Link>  
             <Link href="https://wa.me/16723270327?text=Hello%2C%20AngleX Team!" style={{marginLeft: "10px"}}>
                 <Image                
-                src="/image/support-icon.png"
+                src="/image/customer-support1.png"
                 alt="earphone"
                 width={24}
                 height={24}
