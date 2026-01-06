@@ -1996,4 +1996,5 @@ section.section-4 .dflex-out .rw span.black {
 select.form-control {
 	font-size: 18px !important;
     font-family: 'Barlow Condensed';
+	font-weight: 500;
 }
