@@ -1988,3 +1988,12 @@ section.section-4 .dflex-out .rw span.black {
 	height: 100%;
     overflow: auto;
 }
+
+.select-amt input::placeholder {
+    color: #111;
+}
+.select-amt input[type="number"],
+select.form-control {
+	font-size: 18px !important;
+    font-family: 'Barlow Condensed';
+}
