@@ -258,7 +258,7 @@ export default function Exchange() {
                         <div className=""></div>
                     </div>    
 
-                    <p className="title ptitle" style={{ textAlign: "left", paddingTop: '10px' }}>
+                    <p className="title ptitle" style={{ textAlign: "left", paddingTop: '0px' }}>
                       Fiat
                     </p>
                     <div className="select-amt" style={{ position: "relative",background: '#fff' }}>
