@@ -1992,9 +1992,9 @@ section.section-4 .dflex-out .rw span.black {
 }
 .select-amt input[type="number"],
 select.form-control {
-	font-size: 18px !important;
+	font-size: 15px !important;
     font-family: 'Barlow Condensed';
-	font-weight: 500;
+	font-weight: 400;
 }
 
 .logo-text {
