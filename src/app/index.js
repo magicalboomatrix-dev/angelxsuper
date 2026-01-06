@@ -43,7 +43,7 @@ export default function Index() {
  
   return (
     <div>
-      <div className="page-wrappers" style={{background:'#f9f9f9'}}>
+      <div className="page-wrappers" style={{background:'#f9f9f9',height: '110vh'}}>
          {loading && <div className="loader">
           <Image 
             src="/images/loading.webp"
@@ -91,7 +91,7 @@ export default function Index() {
             </div>
         </header>
 
-        <div className="page-wrapper" style={{height: '110vh'}}>
+        <div className="page-wrapper">
             <div className="ifLoginMainDe">
              <div className="inner">
                <span className="labelTxtMain">Available Balance</span>
