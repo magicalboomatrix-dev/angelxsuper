@@ -87,7 +87,7 @@ p {
 	transition: scrollbar-color 0.3s;
 }
 .page-wrapper.page-wrapper-ex {
-    margin-top: 45px;
+    margin-top: 35px;
 	background: #f6f7fa;
 }
 .page-wrapper:hover {
@@ -1982,4 +1982,6 @@ section.section-4 .dflex-out .rw span.black {
     margin: 0 0px 0 15px;
 }
 
-
+.page-wrappers.deposit-amount-page .page-wrapper {
+    margin-top: 45px;
+}
