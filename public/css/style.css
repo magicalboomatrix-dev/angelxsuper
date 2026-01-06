@@ -70,7 +70,7 @@ p {
     max-width: 375px;
     margin: auto;
     background: #fff;
-
+	overflow: auto;
     box-sizing: border-box;
 
 }
