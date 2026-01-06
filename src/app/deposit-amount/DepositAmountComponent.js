@@ -352,7 +352,7 @@ export default function DepositAmount() {
     </div>
         </div >
       </main >
-    { showModal && (
+    {/* { showModal && (
       <div
         style={{
           position: "fixed",
@@ -434,7 +434,7 @@ export default function DepositAmount() {
         </div>
       </div>
     )
-}
+} */}
     </div >
   );
 }
