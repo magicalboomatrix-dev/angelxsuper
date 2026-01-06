@@ -160,7 +160,7 @@ export default function BankPage() {
   return (
     <div>
       <main>
-        <div className="page-wrappers no-empty-page deposit-amount-page add-bank-page">
+        <div className="page-wrappers no-empty-page deposit-amount-page add-bank-page" style={{height: '100vh'}}>
           <header className="header">
             <div className="brdc">
               <div className="back-btn">
