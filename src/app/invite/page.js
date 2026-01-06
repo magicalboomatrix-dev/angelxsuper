@@ -14,7 +14,7 @@ export default function DemoPage() {
         <div className="page-wrappers empty-page" style={{height: "120vh"}}>
 
   <div className="page-wrapperss page-wrapper-ex page-wrapper-login page-wrapper-loginacc form-wrapper" 
-  style={{'height': '100%','overflow': 'auto','scrollbarWidth':'thin', 'scrollbarColor':'transparent transparent'}}>
+  style={{}}>
     <div className="brdc">
       <div className="back-btn">
         <Link href="/home">
