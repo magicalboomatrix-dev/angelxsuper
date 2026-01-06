@@ -169,7 +169,7 @@ export default function HomePage() {
                   <Link href="/referals">
                     <div className="image">
                       <h3>
-                        <img src="images/ref-icon1.png" /> Referrals
+                        <img src="image/ref-icon1.png" /> Referrals
                       </h3>
                     </div>
                     <div className="arw">
@@ -181,7 +181,7 @@ export default function HomePage() {
                   <Link href="/history">
                     <div className="image">
                       <h3>
-                        <img src="images/ref-icon2.png" /> Exchange history
+                        <img src="image/ref-icon2.png" /> Exchange history
                       </h3>
                     </div>
                     <div className="arw">
@@ -193,7 +193,7 @@ export default function HomePage() {
                   <Link href="/statements">
                     <div className="image">
                       <h3>
-                        <img src="images/ref-icon3.png" /> Statement
+                        <img src="image/ref-icon3.png" /> Statement
                       </h3>
                     </div>
                     <div className="arw">
@@ -205,7 +205,7 @@ export default function HomePage() {
                   <Link href="/bank">
                     <div className="image">
                       <h3>
-                        <img src="images/ref-icon4.png" /> Bank account
+                        <img src="image/ref-icon4.png" /> Bank account
                       </h3>
                     </div>
                     <div className="arw">
@@ -217,7 +217,7 @@ export default function HomePage() {
                   <Link href="/invite">
                     <div className="image">
                       <h3>
-                        <img src="images/ref-icon5.png" /> Invited friends
+                        <img src="image/ref-icon5.png" /> Invited friends
                       </h3>
                     </div>
                     <div className="arw">
