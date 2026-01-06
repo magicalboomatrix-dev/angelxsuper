@@ -91,7 +91,7 @@ export default function Index() {
             </div>
         </header>
 
-        <div className="page-wrapper">
+        <div className="page-wrapper" style={{height: '110vh'}}>
             <div className="ifLoginMainDe">
              <div className="inner">
                <span className="labelTxtMain">Available Balance</span>
