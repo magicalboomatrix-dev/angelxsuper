@@ -1998,3 +1998,8 @@ select.form-control {
     font-family: 'Barlow Condensed';
 	font-weight: 500;
 }
+
+.logo-text {
+    font-weight: 600;
+    font-family: 'Roboto';
+}
