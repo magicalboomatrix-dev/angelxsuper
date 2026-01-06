@@ -70,15 +70,13 @@ p {
     max-width: 375px;
     margin: auto;
     background: #fff;
-    height: 86vh;
-	height: 100vh;
+
     box-sizing: border-box;
-	overflow: hidden;
-	margin-bottom: 50px;
+
 }
 
 .page-wrapper {
-    height: 90%;
+    height: auto;
     padding: 15px 10px 14px 16px;
     box-sizing: border-box;
     overflow: auto;
