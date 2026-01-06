@@ -1752,7 +1752,7 @@ section.section-4 .dflex-out .rw span.black {
 .select-amt .amt, .amt {
     display: flex;
     align-items: center;
-    font-weight: bold;
+    font-weight: 400;
     letter-spacing: 1px;
 }
 
