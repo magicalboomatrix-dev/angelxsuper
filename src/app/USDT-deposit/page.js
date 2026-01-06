@@ -201,7 +201,7 @@ export default function USDTDeposit() {
                     )}
 
                 {/* DEPOSIT BUTTON */}
-                <p className="title">Available($) {walletBalance}</p>
+                <p className="title" style={{paddingTop: '5px'}}>Available($) {walletBalance}</p>
                 <Link
                   href={isDepositDisabled ? '#' : {
                     pathname: "/deposit-amount",
