@@ -82,9 +82,7 @@ p {
     box-sizing: border-box;
     overflow: auto;
     margin: 15px 0 45px 0;
-    scrollbar-width: thin;
-	scrollbar-color: transparent transparent;
-	transition: scrollbar-color 0.3s;
+
 }
 .page-wrapper.page-wrapper-ex {
     margin-top: 35px;
