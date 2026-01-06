@@ -1985,4 +1985,6 @@ section.section-4 .dflex-out .rw span.black {
 
 .page-wrappers.deposit-amount-page .page-wrapper {
     margin-top: 45px;
+	height: 100%;
+    overflow: auto;
 }
