@@ -105,13 +105,13 @@ export default function Index() {
                <div style={{ width: "50%" }}>
                  <span className="labelTxtMain">Sell Pending</span>
                  <p>
-                   <span /> USDT
+                   <span /> 0.00 USDT
                  </p>
                </div>
                <div style={{ width: "50%" }}>
                  <span className="labelTxtMain">Deposit Pending</span>
                  <p>
-                   <span /> USDT
+                   <span /> 0.00 USDT
                  </p>
                </div>
              </div>
