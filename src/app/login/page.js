@@ -21,6 +21,7 @@ export default function LoginPage() {
   if (loading) {
     return (
       <div className="page-wrappers full-height">
+      <div className="page-wrapperss">
         <div className="loader">
           <Image
             src="/images/loading.webp" // ✅ Leading / ensures Vercel finds it
@@ -30,6 +31,7 @@ export default function LoginPage() {
             priority
           />
         </div>
+        </div>
       </div>
     );
   }
@@ -37,7 +39,7 @@ export default function LoginPage() {
   return (
     <div>
       <main>
-        <div className="page-wrappers">
+        <div className="page-wrappers full-height">
           <div className="page-wrapperss page-wrapper-ex page-wrapper-login">
             <section className="section-1">
               <div className="image" style={{textAlign: 'center'}}>
