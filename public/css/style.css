@@ -2002,3 +2002,14 @@ select.form-control {
     font-family: 'Roboto';
 	font-size: 16px;
 }
+
+
+.page-wrappers.full-height {}
+
+.page-wrappers.full-height .page-wrapper {
+    height: 100vh;
+}
+
+.page-wrappers.setting-wrapper .page-wrapper.page-wrapper-ex {
+    padding-top: 52px;
+}
