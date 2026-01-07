@@ -1014,7 +1014,10 @@ section.section-2.reffer {
     display: flex;
     align-items: center;
     font-size: 15px;
-    color: #161616;
+    color: #000;
+    font-family: 'Roboto';
+    letter-spacing: 0;
+    font-weight: 400;
 }
 
 section.section-2.reffer .bx .image h3 > img {
