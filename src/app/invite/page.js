@@ -69,7 +69,7 @@ export default function DemoPage() {
       </table>
     </div>
 
-    <div className="login-bx" style={{"margin":"0 0 0 0"}}><a className="login-btn" href="/sell-usdt">Invite Friends</a></div>
+    <div className="login-bx" style={{"margin":"0 0 0 0"}}><a className="login-btn" href="/exchange">Invite Friends</a></div>
 
   </div>
 </div>
