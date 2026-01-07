@@ -17,7 +17,7 @@ export default function SettingPage() {
   return (
     <div>
       <main>
-        <div className="page-wrappers page-wrapper-ex home-wrapperss setting-wrapper">  
+        <div className="page-wrappers page-wrapper-ex home-wrapperss setting-wrapper full-height">  
           <header className="header setting-header">
             <div className="left">
               <div className="d-flex">
