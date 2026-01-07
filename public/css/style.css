@@ -2011,5 +2011,6 @@ select.form-control {
 }
 
 .page-wrappers.setting-wrapper .page-wrapper.page-wrapper-ex {
-    padding-top: 52px;
+    padding-top: 67px;
+    margin-top: 0;
 }
