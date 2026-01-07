@@ -574,6 +574,10 @@ section.section-4 .dflex-out .rw {
     margin-bottom: 7px;
 }
 
+.page-wrapper.page-wrapper-ex section.section-2.reffer .bx {
+    border: 1px solid #11111117 !important;
+}
+
 .page-wrapper.page-wrapper-ex section.section-2 .bx .image {
     display: flex;
     align-items: center;
