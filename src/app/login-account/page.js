@@ -158,7 +158,7 @@ export default function LoginAccount() {
   return (
     <div>
       <main>
-        <div className="page-wrappers">
+        <div className="page-wrappers full-height">
           <div className="page-wrapperss page-wrapper-ex page-wrapper-login page-wrapper-loginacc form-wrapper">
             <div className="back-btn">
               <Link href="/login">
