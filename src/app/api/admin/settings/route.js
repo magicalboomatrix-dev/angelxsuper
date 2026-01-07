@@ -38,7 +38,11 @@ export async function POST(req) {
     if (!admin) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
     const body = await req.json();
-    const { rate, depositMin, withdrawMin } = body;
+    const { 
+      rate, depositMin, withdrawMin,
+      trc20Address, erc20Address,
+      trc20QrUrl, erc20QrUrl
+    } = body;
 
     // basic validation
     const r = parseFloat(rate);
@@ -53,12 +57,24 @@ export async function POST(req) {
     if (current) {
       const updated = await prisma.settings.update({
         where: { id: current.id },
-        data: { rate: r, depositMin: d, withdrawMin: w },
+        data: { 
+          rate: r, 
+          depositMin: d, 
+          withdrawMin: w,
+          trc20Address, erc20Address,
+          trc20QrUrl, erc20QrUrl
+        },
       });
       return NextResponse.json({ settings: updated });
     } else {
       const created = await prisma.settings.create({
-        data: { rate: r, depositMin: d, withdrawMin: w },
+        data: { 
+          rate: r, 
+          depositMin: d, 
+          withdrawMin: w,
+          trc20Address, erc20Address,
+          trc20QrUrl, erc20QrUrl
+        },
       });
       return NextResponse.json({ settings: created });
     }

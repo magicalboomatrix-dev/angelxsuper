@@ -1,5 +1,5 @@
 import prisma from '@/lib/prisma';
-import jwt from 'jsonwebtoken';
+import { generateToken } from '@/lib/auth';
 
 export async function POST(req) {
   try {
@@ -27,17 +27,8 @@ export async function POST(req) {
       return new Response(JSON.stringify({ error: 'OTP expired' }), { status: 401 });
     }
 
-    if (!process.env.JWT_SECRET) {
-      console.error('JWT_SECRET not defined');
-      return new Response(JSON.stringify({ error: 'Server misconfiguration' }), { status: 500 });
-    }
-
     // Generate JWT token
-    const token = jwt.sign(
-      { id: user.id, email: user.email },
-      process.env.JWT_SECRET,
-      { expiresIn: '7d' }
-    );
+    const token = generateToken(user);
 
     // Clear OTP
     await prisma.user.update({

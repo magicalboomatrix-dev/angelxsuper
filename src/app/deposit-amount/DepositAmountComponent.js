@@ -19,17 +19,32 @@ export default function DepositAmount() {
     }
   }, []);
 
-  // QR codes
-  const qrCodes = {
-    TRC20: "images/trc20.png",
-    ERC20: "images/erc20.png",
-  };
+  const [qrCodes, setQrCodes] = useState({ TRC20: "", ERC20: "" });
+  const [depositAddresses, setDepositAddresses] = useState({ TRC20: "", ERC20: "" });
 
-  // Deposit addresses
-  const depositAddresses = {
-    TRC20: "TU7f7jwJr56owuutyzbJEwVqF3ii4KCiPV",
-    ERC20: "0x78845f99b319b48393fbcde7d32fcb7ccd6661bf",
-  };
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const res = await fetch('/api/settings');
+        if (res.ok) {
+          const data = await res.json();
+          if (data.settings) {
+            setQrCodes({
+              TRC20: data.settings.trc20QrUrl || "images/trc20.png",
+              ERC20: data.settings.erc20QrUrl || "images/erc20.png",
+            });
+            setDepositAddresses({
+              TRC20: data.settings.trc20Address || "",
+              ERC20: data.settings.erc20Address || "",
+            });
+          }
+        }
+      } catch (err) {
+        console.error("Error fetching crypto settings", err);
+      }
+    };
+    fetchSettings();
+  }, []);
 
   // Timer state
   const [timeLeft, setTimeLeft] = useState(0);

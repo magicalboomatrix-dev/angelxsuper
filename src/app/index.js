@@ -33,18 +33,46 @@ import Footer from './components/footer';
 
 export default function Index() {
   const [loading, setLoading] = useState(true);
-    useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 500);
-    return () => clearTimeout(timer);
+  const [user, setUser] = useState(null);
+  const [authChecking, setAuthChecking] = useState(true);
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        setAuthChecking(false);
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const res = await fetch("/api/auth/me", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        if (res.ok) {
+          const data = await res.json();
+          setUser(data.user);
+        } else {
+          localStorage.removeItem("token");
+          setUser(null);
+        }
+      } catch (e) {
+        localStorage.removeItem("token");
+        setUser(null);
+      } finally {
+        setAuthChecking(false);
+        setLoading(false);
+      }
+    };
+
+    checkAuth();
   }, []);
 
  
   return (
     <div>
       <div className="page-wrappers" style={{background:'#f9f9f9',height: '110vh'}}>
-         {loading && <div className="loader">
+         {(loading || authChecking) && <div className="loader">
           <Image 
             src="/images/loading.webp"
             alt="loader"
@@ -53,13 +81,7 @@ export default function Index() {
             priority
           />
           </div>}
-        {!loading && (
-          <div>
-            {/* Your main content goes here */}
-            <p>Content Loaded</p>
-          </div>
-        )}
-        
+
         <header className="header">
             <div className="left">
                 <div className="logo-icon">
@@ -94,39 +116,44 @@ export default function Index() {
         </header>
 
         <div className="page-wrapper">
+          {user && (
             <div className="ifLoginMainDe">
              <div className="inner">
                <span className="labelTxtMain">Available Balance</span>
                <p style={{ fontSize: '14px'}}>
-                 <span style={{ fontSize: 16, fontWeight: "600 !important" }} />  0.00 USDT 
+                 <span style={{ fontSize: 16, fontWeight: "600 !important" }} />  {(user.wallet?.available || 0).toFixed(2)} USDT 
                </p>
              </div>
              <div className="mainTwoInDiv">
                <div style={{ width: "50%" }}>
                  <span className="labelTxtMain">Sell Pending</span>
                  <p>
-                   <span /> 0.00 USDT
+                   <span /> {(user.wallet?.sellPending || 0).toFixed(2)} USDT
                  </p>
                </div>
                <div style={{ width: "50%" }}>
                  <span className="labelTxtMain">Deposit Pending</span>
                  <p>
-                   <span /> 0.00 USDT
+                   <span /> {(user.wallet?.depositPending || 0).toFixed(2)} USDT
                  </p>
                </div>
              </div>
              <img src="/image/wallet.png" alt="" />
            </div>
+          )}
 
-                 
+          {!user && !authChecking && (
             <div className="easyTradingSection">
                 <div className="texteasy">
                     <h2>Easy trading quick profits</h2>
                     <p>Ensuring every user maximizer their <br/> investment return</p>
-                    <button>Sign up <i className="bi bi-arrow-right-short"></i></button>
+                    <Link href="/login">
+                      <button>Sign up <i className="bi bi-arrow-right-short"></i></button>
+                    </Link>
                 </div>
                 <img src="/image/main_image.png" />
             </div>
+          )}
 
             <div className="threeSection">
               <div className="">

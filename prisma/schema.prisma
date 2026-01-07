@@ -82,6 +82,10 @@ model Settings {
   rate        Float    @default(102)
   withdrawMin Float    @default(50)
   depositMin  Float    @default(100)
+  trc20Address String  @default("TU7f7jwJr56owuutyzbJEwVqF3ii4KCiPV")
+  erc20Address String  @default("0x78845f99b319b48393fbcde7d32fcb7ccd6661bf")
+  trc20QrUrl   String  @default("images/trc20.png")
+  erc20QrUrl   String  @default("images/erc20.png")
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }

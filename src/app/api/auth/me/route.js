@@ -18,8 +18,27 @@ export async function GET(req) {
       usdtWithdrawn: 0,
     };
 
-    // Calculate progressing balance
-    const progressing = wallet.usdtDeposited - wallet.usdtAvailable - wallet.usdtWithdrawn;
+    // Calculate pending stats
+    const sellPendingTx = await prisma.transaction.aggregate({
+      _sum: { amount: true },
+      where: {
+        userId: user.id,
+        type: { in: ['SELL', 'WITHDRAW'] },
+        status: 'PENDING',
+      },
+    });
+
+    const depositPendingTx = await prisma.transaction.aggregate({
+      _sum: { amount: true },
+      where: {
+        userId: user.id,
+        type: 'DEPOSIT',
+        status: 'PENDING',
+      },
+    });
+
+    const sellPending = sellPendingTx._sum.amount || 0;
+    const depositPending = depositPendingTx._sum.amount || 0;
 
     return new Response(
       JSON.stringify({
@@ -32,7 +51,9 @@ export async function GET(req) {
             total: wallet.usdtDeposited,
             available: wallet.usdtAvailable,
             withdrawn: wallet.usdtWithdrawn,
-            progressing: progressing < 0 ? 0 : progressing,
+            progressing: sellPending + depositPending,
+            sellPending: sellPending,
+            depositPending: depositPending,
           },
         },
       }),

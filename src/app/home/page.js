@@ -19,7 +19,7 @@ export default function HomePage() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      router.push("/login");
+      setLoading(false);
       return;
     }
 
@@ -28,13 +28,15 @@ export default function HomePage() {
         const res = await fetch("/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
+        if (res.status === 401) {
+          localStorage.removeItem("token");
+          return; 
+        }
         if (!res.ok) throw new Error("Unauthorized");
         const data = await res.json();
         setUser(data.user);
       } catch (err) {
         console.error(err);
-        localStorage.removeItem("token");
-        router.push("/login");
       } finally {
         setLoading(false);
       }
@@ -95,20 +97,22 @@ export default function HomePage() {
                 <h3>{user?.mobile || "+91 ******"}</h3>
               </div>
 
-              <div className="tab-inl">
-                <div className="bx">
-                  <p>Total Amount($)</p>
-                  <h3>{(user?.wallet?.total || 0).toFixed(2)}</h3>
+              {user ? (
+                <div className="tab-inl">
+                  <div className="bx">
+                    <p>Available($)</p>
+                    <h3>{(user?.wallet?.available || 0).toFixed(2)}</h3>
+                  </div>
+                  <div className="bx">
+                    <p>Sell Pending($)</p>
+                    <h3>{(user?.wallet?.sellPending || 0).toFixed(2)}</h3>
+                  </div>
+                  <div className="bx">
+                    <p>Deposit Pending($)</p>
+                    <h3>{(user?.wallet?.depositPending || 0).toFixed(2)}</h3>
+                  </div>
                 </div>
-                <div className="bx">
-                  <p>Available($)</p>
-                  <h3>{(user?.wallet?.available || 0).toFixed(2)}</h3>
-                </div>
-                <div className="bx">
-                  <p>Progressing($)</p>
-                  <h3>{(user?.wallet?.progressing || 0).toFixed(2)}</h3>
-                </div>
-              </div>
+              ) : null}
             </section>
 
             <section className="section-2a">
@@ -135,7 +139,11 @@ export default function HomePage() {
                   </Link>
                 </div>
                 <div className="btm">
-                  <button className="btn">To AngelX Super</button>
+                  {user ? null : (
+                    <Link href="/login">
+                      <button className="btn">Sign Up / Login</button>
+                    </Link>
+                  )}
                 </div>
               </div>
             </section>
@@ -145,7 +153,7 @@ export default function HomePage() {
                 <div className="lefts">
                   <p className="ttl">Exchange</p>
                   <p>
-                    <b>$0</b>
+                    <b>${(user?.wallet?.withdrawn || 0).toFixed(2)}</b>
                   </p>
                 </div>
                 <div className="mid">

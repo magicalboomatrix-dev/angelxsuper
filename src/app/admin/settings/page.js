@@ -8,6 +8,13 @@ export default function AdminSettingsPage() {
   const [rate, setRate] = useState(102);
   const [depositMin, setDepositMin] = useState(100);
   const [withdrawMin, setWithdrawMin] = useState(50);
+  
+  // Crypto Settings
+  const [trc20Address, setTrc20Address] = useState("");
+  const [erc20Address, setErc20Address] = useState("");
+  const [trc20QrUrl, setTrc20QrUrl] = useState("");
+  const [erc20QrUrl, setErc20QrUrl] = useState("");
+
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [activeTab, setActiveTab] = useState('general');
@@ -27,6 +34,10 @@ export default function AdminSettingsPage() {
         setRate(data.settings.rate);
         setDepositMin(data.settings.depositMin);
         setWithdrawMin(data.settings.withdrawMin);
+        setTrc20Address(data.settings.trc20Address || "");
+        setErc20Address(data.settings.erc20Address || "");
+        setTrc20QrUrl(data.settings.trc20QrUrl || "");
+        setErc20QrUrl(data.settings.erc20QrUrl || "");
       }
     } catch (err) {
       console.error(err);
@@ -43,7 +54,15 @@ export default function AdminSettingsPage() {
       const res = await fetch('/api/admin/settings', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ rate, depositMin, withdrawMin }),
+        body: JSON.stringify({ 
+          rate, 
+          depositMin, 
+          withdrawMin,
+          trc20Address,
+          erc20Address,
+          trc20QrUrl,
+          erc20QrUrl
+        }),
       });
       const data = await res.json();
       if (res.ok) {
@@ -84,6 +103,20 @@ export default function AdminSettingsPage() {
               }}
             >
               General
+            </button>
+            <button 
+              onClick={() => setActiveTab('crypto')}
+              style={{ 
+                padding: "16px 24px", 
+                fontWeight: 500, 
+                color: activeTab === 'crypto' ? "#2563eb" : "#4b5563", 
+                borderBottom: activeTab === 'crypto' ? "2px solid #2563eb" : "none",
+                background: "none",
+                border: "none",
+                cursor: "pointer"
+              }}
+            >
+              Crypto
             </button>
             <button 
               onClick={() => setActiveTab('security')}
@@ -143,6 +176,67 @@ export default function AdminSettingsPage() {
                   step="1"
                 />
                 <p style={{ fontSize: '12px', color: '#6b7280', marginTop: 4 }}>Minimum USDT amount users can withdraw to their bank account</p>
+              </div>
+
+              <div style={{ marginTop: "24px", paddingTop: "24px", borderTop: "1px solid #e5e7eb" }}>
+                <button 
+                  onClick={handleSave} 
+                  disabled={saving}
+                  className={styles.viewAllBtn}
+                  style={{ padding: "10px 20px", fontSize: "14px" }}
+                >
+                  {saving ? 'Saving...' : 'Save Changes'}
+                </button>
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'crypto' && (
+            <div style={{ maxWidth: "600px" }}>
+              <h3 style={{ fontSize: "18px", fontWeight: 600, marginBottom: "16px", color: "#111827" }}>Crypto Settings</h3>
+
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel}>TRC20 Address</label>
+                <input 
+                  type="text" 
+                  value={trc20Address} 
+                  onChange={(e) => setTrc20Address(e.target.value)} 
+                  className={styles.formInput}
+                  placeholder="Enter TRC20 Wallet Address"
+                />
+              </div>
+
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel}>TRC20 QR Code URL</label>
+                <input 
+                  type="text" 
+                  value={trc20QrUrl} 
+                  onChange={(e) => setTrc20QrUrl(e.target.value)} 
+                  className={styles.formInput}
+                  placeholder="e.g. images/trc20.png or https://..."
+                />
+              </div>
+
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel}>ERC20 Address</label>
+                <input 
+                  type="text" 
+                  value={erc20Address} 
+                  onChange={(e) => setErc20Address(e.target.value)} 
+                  className={styles.formInput}
+                  placeholder="Enter ERC20 Wallet Address"
+                />
+              </div>
+
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel}>ERC20 QR Code URL</label>
+                <input 
+                  type="text" 
+                  value={erc20QrUrl} 
+                  onChange={(e) => setErc20QrUrl(e.target.value)} 
+                  className={styles.formInput}
+                  placeholder="e.g. images/erc20.png or https://..."
+                />
               </div>
 
               <div style={{ marginTop: "24px", paddingTop: "24px", borderTop: "1px solid #e5e7eb" }}>
