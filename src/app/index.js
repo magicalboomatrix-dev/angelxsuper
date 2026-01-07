@@ -97,7 +97,7 @@ export default function Index() {
             <div className="ifLoginMainDe">
              <div className="inner">
                <span className="labelTxtMain">Available Balance</span>
-               <p style={{ fontSize: 12, fontWeight: "400 !important" }}>
+               <p style={{ fontSize: '14px'}}>
                  <span style={{ fontSize: 16, fontWeight: "600 !important" }} />  0.00 USDT 
                </p>
              </div>
