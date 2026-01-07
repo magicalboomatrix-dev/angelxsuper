@@ -179,19 +179,19 @@ export default function Index() {
               </div> */}
             <div className="threeSectionSlider">
               <div>
-                <span>BTC USDT</span>
-                <h3>0.1803</h3>
-                <p>+0.12%</p>
+                <span>ETH USDT</span>
+                <h3>1.2491</h3>
+                <p>+2.29%</p>
               </div>
               <div>
                 <span>BTC USDT</span>
-                <h3>0.1803</h3>
-                <p>+0.12%</p>
+                <h3>1.1891</h3>
+                <p>+1.72%</p>
               </div>
               <div>
-                <span>BTC USDT</span>
-                <h3>0.1803</h3>
-                <p>+0.12%</p>
+                <span>USD USDT</span>
+                <h3>1.0003</h3>
+                <p>+0.11%</p>
               </div>
             </div>
 
