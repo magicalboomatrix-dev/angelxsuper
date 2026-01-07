@@ -2052,3 +2052,25 @@ select.form-control {
     margin: 0;
     padding-top: 50px;
 }
+
+
+.page-wrappers.page-wrapper-ex.home-wrappers {}
+
+.page-wrappers.page-wrapper-ex.home-wrappers .page-wrapper.page-wrapper-ex {
+    position: relative;
+}
+
+.page-wrappers.page-wrapper-ex.home-wrappers .page-wrapper.page-wrapper-ex:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 300px;
+    background-image: url(../image/gr-bg.png);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    opacity: .2;
+}
+
+.page-wrappers.page-wrapper-ex.home-wrappers .page-wrapper.page-wrapper-ex section.section-2.reffer {position: relative;}
