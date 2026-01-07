@@ -597,7 +597,7 @@ section.section-4 .dflex-out .rw {
 }
 
 .page-wrapper.page-wrapper-ex section.section-2.reffer .bx {
-    border: 1px solid #11111117 !important;
+    border: 0px solid #11111117 !important;
 }
 
 .page-wrapper.page-wrapper-ex section.section-2 .bx .image {
@@ -1018,7 +1018,7 @@ section.section-2.reffer {
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    background: #fff;
+    background: transparent;
     border: 0;
     margin-bottom: 7px;
     padding: 6px 10px 6px 0;
