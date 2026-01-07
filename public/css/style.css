@@ -2006,7 +2006,8 @@ select.form-control {
 
 .page-wrappers.full-height {}
 
-.page-wrappers.full-height .page-wrapper {
+.page-wrappers.full-height .page-wrapper,
+.page-wrappers.full-height .page-wrapperss{
     height: 100vh;
 }
 
