@@ -16,19 +16,30 @@ function getAdminFromCookie(req) {
 export async function GET(req) {
   try {
     const admin = getAdminFromCookie(req);
-    if (!admin) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    if (!admin) {
+      console.error('Admin auth failed - no token or invalid token');
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
     let settings = await prisma.settings.findFirst();
     if (!settings) {
       settings = await prisma.settings.create({
-        data: { rate: 102, withdrawMin: 50, depositMin: 100 },
+        data: { 
+          rate: 102, 
+          withdrawMin: 50, 
+          depositMin: 100,
+          trc20Address: "TU7f7jwJr56owuutyzbJEwVqF3ii4KCiPV",
+          erc20Address: "0x78845f99b319b48393fbcde7d32fcb7ccd6661bf",
+          trc20QrUrl: "images/trc20.png",
+          erc20QrUrl: "images/erc20.png"
+        },
       });
     }
 
     return NextResponse.json({ settings });
   } catch (err) {
-    console.error('Admin get settings error:', err);
-    return NextResponse.json({ error: 'Server error' }, { status: 500 });
+    console.error('Admin get settings error:', err.message || err);
+    return NextResponse.json({ error: 'Server error: ' + (err.message || 'Unknown') }, { status: 500 });
   }
 }
 
@@ -53,6 +64,11 @@ export async function POST(req) {
       return NextResponse.json({ error: 'Invalid values' }, { status: 400 });
     }
 
+    // Validate crypto addresses are not empty
+    if (!trc20Address || !erc20Address) {
+      return NextResponse.json({ error: 'Crypto addresses cannot be empty' }, { status: 400 });
+    }
+
     const current = await prisma.settings.findFirst();
     if (current) {
       const updated = await prisma.settings.update({
@@ -61,10 +77,13 @@ export async function POST(req) {
           rate: r, 
           depositMin: d, 
           withdrawMin: w,
-          trc20Address, erc20Address,
-          trc20QrUrl, erc20QrUrl
+          trc20Address: trc20Address || current.trc20Address, 
+          erc20Address: erc20Address || current.erc20Address,
+          trc20QrUrl: trc20QrUrl || current.trc20QrUrl, 
+          erc20QrUrl: erc20QrUrl || current.erc20QrUrl
         },
       });
+      console.log('Settings updated successfully:', updated.id);
       return NextResponse.json({ settings: updated });
     } else {
       const created = await prisma.settings.create({
@@ -76,10 +95,11 @@ export async function POST(req) {
           trc20QrUrl, erc20QrUrl
         },
       });
+      console.log('Settings created successfully:', created.id);
       return NextResponse.json({ settings: created });
     }
   } catch (err) {
-    console.error('Admin set settings error:', err);
-    return NextResponse.json({ error: 'Server error' }, { status: 500 });
+    console.error('Admin set settings error:', err.message || err);
+    return NextResponse.json({ error: 'Server error: ' + (err.message || 'Unknown') }, { status: 500 });
   }
 }

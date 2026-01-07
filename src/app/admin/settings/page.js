@@ -49,6 +49,12 @@ export default function AdminSettingsPage() {
   const { showToast } = useToast();
 
   const handleSave = async () => {
+    // Validate before sending
+    if (!trc20Address || !erc20Address) {
+      showToast('❌ Both TRC20 and ERC20 addresses are required', 'error');
+      return;
+    }
+
     setSaving(true);
     try {
       const res = await fetch('/api/admin/settings', {
@@ -67,6 +73,8 @@ export default function AdminSettingsPage() {
       const data = await res.json();
       if (res.ok) {
         showToast('Settings updated successfully ✅', 'success');
+        // Refresh the data to confirm
+        fetchSettings();
       } else {
         showToast(data.error || 'Failed to update settings', 'error');
       }
