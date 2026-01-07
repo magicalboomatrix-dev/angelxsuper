@@ -20,7 +20,7 @@ export default function LoginPage() {
 
   if (loading) {
     return (
-      <div className="page-wrappers">
+      <div className="page-wrappers full-height">
         <div className="loader">
           <Image
             src="/images/loading.webp" // ✅ Leading / ensures Vercel finds it
