@@ -1015,15 +1015,21 @@ section.section-2.reffer {
     padding-top: 10px;
 }
 
+.page-wrappers.page-wrapper-ex.home-wrappers .page-wrapper.page-wrapper-ex section.section-2.reffer .rw {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
 .page-wrappers.home-wrappers .page-wrapper.page-wrapper-ex section.section-2 .bx {
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    background: transparent;
+    background: #fff;
     border: 0;
     margin-bottom: 7px;
-    padding: 6px 10px 6px 0;
-	margin: 12px 0 10px 0;
+    padding: 12px 10px;
+    margin: 0px 0 0px 0;
+    border-radius: 0;
 }
 
 .page-wrappers.home-wrappers .page-wrapper.page-wrapper-ex section.section-2.reffer .bx a{
@@ -1039,6 +1045,14 @@ section.section-2.reffer {
 
 .page-wrapper.page-wrapper-ex section.section-2.reffer .bx .image h3 {
     display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #000;
+    font-family: 'Roboto';
+    letter-spacing: 0;
+    font-weight: 400;
+	text-transform: uppercase;
+	display: flex;
     align-items: center;
     font-size: 15px;
     color: #000;
