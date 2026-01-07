@@ -123,19 +123,19 @@ export default function HomePage() {
                         <b>0 PAYX</b>
                       </p>
                       <p>
-                        <span>1PAYX = 0.010750USDT</span>
+                        <span>1PAYX = 0.010750 USDT</span>
                         <img src="images/ques.png" className="inq" />
                       </p>
                     </div>
                   </div>
-                  <Link href="/sell-usdt">
+                  <Link href="/exchange">
                     <div className="rights">
                       <button className="btn">Withdraw</button>
                     </div>
                   </Link>
                 </div>
                 <div className="btm">
-                  <button className="btn">To AngelX pro</button>
+                  <button className="btn">To AngelX Super</button>
                 </div>
               </div>
             </section>
