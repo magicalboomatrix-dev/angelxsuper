@@ -1059,6 +1059,7 @@ section.section-2.reffer {
     font-family: 'Roboto';
     letter-spacing: 0;
     font-weight: 400;
+	padding-left: 0;
 }
 
 section.section-2.reffer .bx .image h3 > img {
