@@ -55,6 +55,8 @@ export async function POST(req) {
       trc20QrUrl, erc20QrUrl
     } = body;
 
+    console.log('Received POST payload:', body);
+
     // basic validation
     const r = parseFloat(rate);
     const d = parseFloat(depositMin);
@@ -70,30 +72,30 @@ export async function POST(req) {
     }
 
     const current = await prisma.settings.findFirst();
+    
+    // Prepare safe data - convert all to strings and handle empty values
+    const updateData = {
+      rate: r,
+      depositMin: d,
+      withdrawMin: w,
+      trc20Address: String(trc20Address || "").trim() || "TU7f7jwJr56owuutyzbJEwVqF3ii4KCiPV",
+      erc20Address: String(erc20Address || "").trim() || "0x78845f99b319b48393fbcde7d32fcb7ccd6661bf",
+      trc20QrUrl: String(trc20QrUrl || "images/trc20.png").trim(),
+      erc20QrUrl: String(erc20QrUrl || "images/erc20.png").trim()
+    };
+
+    console.log('Sending to Prisma:', updateData);
+
     if (current) {
       const updated = await prisma.settings.update({
         where: { id: current.id },
-        data: { 
-          rate: r, 
-          depositMin: d, 
-          withdrawMin: w,
-          trc20Address: trc20Address || current.trc20Address, 
-          erc20Address: erc20Address || current.erc20Address,
-          trc20QrUrl: trc20QrUrl || current.trc20QrUrl, 
-          erc20QrUrl: erc20QrUrl || current.erc20QrUrl
-        },
+        data: updateData,
       });
       console.log('Settings updated successfully:', updated.id);
       return NextResponse.json({ settings: updated });
     } else {
       const created = await prisma.settings.create({
-        data: { 
-          rate: r, 
-          depositMin: d, 
-          withdrawMin: w,
-          trc20Address, erc20Address,
-          trc20QrUrl, erc20QrUrl
-        },
+        data: updateData,
       });
       console.log('Settings created successfully:', created.id);
       return NextResponse.json({ settings: created });

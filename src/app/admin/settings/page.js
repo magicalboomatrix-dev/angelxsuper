@@ -57,18 +57,22 @@ export default function AdminSettingsPage() {
 
     setSaving(true);
     try {
+      const payload = { 
+        rate: parseFloat(rate) || 0,
+        depositMin: parseFloat(depositMin) || 0,
+        withdrawMin: parseFloat(withdrawMin) || 0,
+        trc20Address: trc20Address || "",
+        erc20Address: erc20Address || "",
+        trc20QrUrl: trc20QrUrl || "images/trc20.png",
+        erc20QrUrl: erc20QrUrl || "images/erc20.png"
+      };
+
+      console.log('Sending payload:', payload);
+
       const res = await fetch('/api/admin/settings', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          rate, 
-          depositMin, 
-          withdrawMin,
-          trc20Address,
-          erc20Address,
-          trc20QrUrl,
-          erc20QrUrl
-        }),
+        body: JSON.stringify(payload),
       });
       const data = await res.json();
       if (res.ok) {
