@@ -179,20 +179,34 @@ export default function Exchange() {
         <div className="page-wrappers" style={{background: '#f6f7fa'}}>
           <header className="header" style={{padding: '9px 11px 5px 11px'}}>
             <div className="left">
-              <Image                
-                              src="/image/name_logo1.png"
-                              alt="logo"
-                              width={130}
-                              height={18}
-                              priority
-                              />
+                <div className="logo-icon">
+                <Image                
+                src="/image/logo-icon.png"
+                alt="logo"
+                width={50}
+                height={44}
+                priority
+                />
+                 </div>
+                <div className="logo-text"><p>AngelX Super</p></div>
             </div>
             <div className="right">
-              <a href="https://wa.me/16723270327?text=Hello%2C%20AngleX Team!" >
-                              <img src="image/customer-support1.png" />
-                              {/*<i class="fa fa-user-circle" aria-hidden="true"></i>*/}
-                                  
-              </a>
+                {/* <Link href="#">
+                <Image                
+                src="/image/bell.png"
+                alt="notification"
+                width={24}
+                height={24}
+                priority
+                /></Link> */} 
+            <Link href="https://wa.me/16723270327?text=Hello%2C%20AngleX Team!" style={{marginLeft: "10px"}}>
+                <Image                
+                src="/image/customer-care-icon.png"
+                alt="earphone"
+                width={24}
+                height={24}
+                priority
+                /></Link>
             </div>
           </header>
 
