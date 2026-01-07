@@ -70,7 +70,8 @@ export default function Index() {
                 height={44}
                 priority
                 />
-                <div className="logo-text"><p>AngelX Super</p></div></div>
+                 </div>
+                <div className="logo-text"><p>AngelX Super</p></div>
             </div>
             <div className="right">
                 {/* <Link href="#">
