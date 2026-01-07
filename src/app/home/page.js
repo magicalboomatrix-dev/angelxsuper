@@ -181,7 +181,7 @@ export default function HomePage() {
                   <Link href="/history">
                     <div className="image">
                       <h3>
-                        <img src="image/ref-icon2.png" /> Exchange history
+                        <img src="image/ref-icon2.png" /> Exchange History
                       </h3>
                     </div>
                     <div className="arw">
@@ -205,7 +205,7 @@ export default function HomePage() {
                   <Link href="/bank">
                     <div className="image">
                       <h3>
-                        <img src="image/ref-icon4.png" /> Bank account
+                        <img src="image/ref-icon4.png" /> Bank Account
                       </h3>
                     </div>
                     <div className="arw">
@@ -217,7 +217,7 @@ export default function HomePage() {
                   <Link href="/invite">
                     <div className="image">
                       <h3>
-                        <img src="image/ref-icon5.png" /> Invited friends
+                        <img src="image/ref-icon5.png" /> Invited Friends
                       </h3>
                     </div>
                     <div className="arw">
