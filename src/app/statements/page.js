@@ -38,7 +38,7 @@ export default function StatementsPage() {
   return (
     <div>
       <main>
-        <div className="page-wrappers empty-page">
+        <div className="page-wrappers empty-page full-height">
           <div className="page-wrapperss page-wrapper-ex page-wrapper-login page-wrapper-loginacc form-wrapper">
             <div className="brdc">
               <div className="back-btn">
