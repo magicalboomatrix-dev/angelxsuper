@@ -2073,4 +2073,4 @@ select.form-control {
     opacity: .2;
 }
 
-.page-wrappers.page-wrapper-ex.home-wrappers .page-wrapper.page-wrapper-ex section.section-2.reffer {position: relative;}
+.page-wrappers.page-wrapper-ex.home-wrappers .page-wrapper.page-wrapper-ex section.section-2.reffer {position: relative;z-index:99}
