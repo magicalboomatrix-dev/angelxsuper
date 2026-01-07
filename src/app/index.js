@@ -62,14 +62,15 @@ export default function Index() {
         
         <header className="header">
             <div className="left">
-                <div className="logo-icon"><Image                
+                <div className="logo-icon">
+                <Image                
                 src="/image/logo-icon.png"
                 alt="logo"
                 width={50}
                 height={44}
                 priority
                 />
-                <div className="logo-text"><p>AngelX Super</p></div>
+                <div className="logo-text"><p>AngelX Super</p></div></div>
             </div>
             <div className="right">
                 {/* <Link href="#">
