@@ -2014,3 +2014,9 @@ select.form-control {
     padding-top: 67px;
     margin-top: 0;
 }
+
+.page-wrappers.deposit-amount-page .page-wrapper {
+    background: #fff;
+    margin: 0;
+    padding-top: 50px;
+}
