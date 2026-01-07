@@ -62,27 +62,27 @@ export default function Index() {
         
         <header className="header">
             <div className="left">
-                <Image                
-                src="/image/name_logo1.png"
+                <div className="logo-icon"><Image                
+                src="/image/logo-icon.png"
                 alt="logo"
-                width={130}
-                height={18}
+                width={50}
+                height={44}
                 priority
                 />
-                
+                <div className="logo-text"><p>AngelX Super</p></div>
             </div>
             <div className="right">
-            <Link href="#">
+                {/* <Link href="#">
                 <Image                
                 src="/image/bell.png"
                 alt="notification"
                 width={24}
                 height={24}
                 priority
-                /></Link>  
+                /></Link> */} 
             <Link href="https://wa.me/16723270327?text=Hello%2C%20AngleX Team!" style={{marginLeft: "10px"}}>
                 <Image                
-                src="/image/customer-support1.png"
+                src="/image/customer-care-icon.png"
                 alt="earphone"
                 width={24}
                 height={24}
