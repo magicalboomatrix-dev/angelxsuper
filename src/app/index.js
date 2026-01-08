@@ -162,7 +162,7 @@ export default function Index() {
           {!user && !authChecking && (
             <div className="easyTradingSection">
                 <div className="texteasy">
-                    <h2>Easy trading quick profits</h2>
+                    <h2>Easy trading quick profitsss</h2>
                     <p>Ensuring every user maximizer their <br/> investment return</p>
                     <Link href="/login">
                       <button>Sign up <i className="bi bi-arrow-right-short"></i></button>
