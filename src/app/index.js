@@ -116,6 +116,23 @@ export default function Index() {
         </header>
 
         <div className="page-wrapper">
+        <div className="applinkMainDiv">
+          <div className="applinkdownload">
+            <div className="appimgtext">
+              <img src="/image/applinkimg.png" alt="" />
+              <div className="textlink">
+                <h4>AngelX Super</h4>
+                <p>The best exchange platform in India</p>
+              </div>
+            </div>
+            <button className="downloadbutton">Download</button>
+          </div>
+          <button className="closeAppLink" id="hideAppLinkButton">
+            <i className="bi bi-x" />
+          </button>
+        </div>
+
+                 
           {user && (
             <div className="ifLoginMainDe">
              <div className="inner">
@@ -141,7 +158,7 @@ export default function Index() {
              <img src="/image/wallet.png" alt="" />
            </div>
           )}
-
+   
           {!user && !authChecking && (
             <div className="easyTradingSection">
                 <div className="texteasy">
