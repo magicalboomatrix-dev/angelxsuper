@@ -2169,4 +2169,8 @@ button.closeAppLink {
 	font-size: 13px;
     font-weight: bold;
 }
+.coimmico {
+    display: flex;
+    justify-content: center;
+}
 
