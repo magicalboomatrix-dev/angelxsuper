@@ -2139,6 +2139,7 @@ select.form-control {
     color: #777;
     margin-bottom: 0px;
     font-family: "Roboto", sans-serif;
+	font-family: 'Mona Sans';
 }
 .applinkdownload .downloadbutton {
     background: #01ba8e;
@@ -2147,6 +2148,7 @@ select.form-control {
     font-size: 10px;
     color: #fff;
     border-radius: 43px;
+	font-family: 'Mona Sans';
 }
 button.closeAppLink {
     position: absolute;
