@@ -72,7 +72,7 @@ export default function BankPage() {
       console.error("Error selecting bank:", error);
     }
 
-    router.push("/sell-usdt");
+    router.push("/exchange");
   };
 
   const handleDeleteBank = async (id) => {
