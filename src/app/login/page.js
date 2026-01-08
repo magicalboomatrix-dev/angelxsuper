@@ -46,7 +46,7 @@ export default function LoginPage() {
                 <img
                   src="/image/login_screen.png" // ✅ Added leading /
                   style={{ width: "75%" }}
-                  alt="Login Illustration"
+                  alt="Login "
                 />
               </div>
             </section>
