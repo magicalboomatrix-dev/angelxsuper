@@ -891,7 +891,7 @@ footer.footer {
 
 .page-wrappers.home-wrappers .page-wrapper section.section-1 .bx p {
     color: #757575;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .page-wrappers.home-wrappers .page-wrapper section.section-1 .bx {
@@ -1062,7 +1062,7 @@ section.section-2.reffer {
     font-weight: 400;
 	display: flex;
     align-items: center;
-    font-size: 15px;
+    font-size: 14px;
     color: #000;
     font-family: "Mona Sans", sans-serif;
     letter-spacing: 0;
