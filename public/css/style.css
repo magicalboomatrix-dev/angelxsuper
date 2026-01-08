@@ -2142,7 +2142,7 @@ select.form-control {
 }
 .applinkdownload .downloadbutton {
     background: #01ba8e;
-    padding: 4px 8px 2px;
+    padding: 4px 8px;
     border: 0px;
     font-size: 10px;
     color: #fff;
