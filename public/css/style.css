@@ -80,12 +80,18 @@ p {
 
 .page-wrapper {
     height: auto;
-    padding: 15px 10px 14px 16px;
+    padding: 15px 10px 14px 10px;
     box-sizing: border-box;
     overflow: auto;
     margin: 15px 0 45px 0;
 
 }
+
+.page-wrappers .page-wrapper {
+    margin-top: 0;
+    padding-top: 52px;
+}
+
 .page-wrapper.page-wrapper-ex {
     margin-top: 35px;
 	background: #f6f7fa;
