@@ -66,8 +66,10 @@ export default function Index() {
     };
 
     checkAuth();
-  }, []);
+   }, []);
 
+  const [showAppLink, setShowAppLink] = useState(true);
+  if (!showAppLink) return null;
  
   return (
     <div>
@@ -95,7 +97,7 @@ export default function Index() {
             </div>
             <Link href="AngelX.apk" className="downloadbutton" download >Download</Link>
           </div>
-          <button className="closeAppLink">
+          <button className="closeAppLink" onClick={() => setShowAppLink(false)}>
             X
           </button>
         </div>
