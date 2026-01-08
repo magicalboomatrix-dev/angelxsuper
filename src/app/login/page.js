@@ -42,10 +42,10 @@ export default function LoginPage() {
         <div className="page-wrappers full-height">
           <div className="page-wrapperss page-wrapper-ex page-wrapper-login">
             <section className="section-1">
-              <div className="image" style={{textAlign: 'center'}}>
+              <div className="image" style={{textAlign: 'center',paddingTop: '20px'}}>
                 <img
-                  src="/image/login-img1.png" // ✅ Added leading /
-                  style={{ width: "85%" }}
+                  src="/image/login_screen.png" // ✅ Added leading /
+                  style={{ width: "75%" }}
                   alt="Login Illustration"
                 />
               </div>
