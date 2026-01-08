@@ -2140,7 +2140,7 @@ select.form-control {
 .appimgtext p {
     font-size: 10px;
     font-weight: 400;
-    color: #777;
+    color: #000;
     margin-bottom: 0px;
     font-family: "Roboto", sans-serif;
 	font-family: 'Mona Sans';
@@ -2154,6 +2154,7 @@ select.form-control {
     border-radius: 43px;
 	font-family: 'Mona Sans';
 	text-decoration: none;
+	position: relative;
 	top: 4px;
 }
 button.closeAppLink {
