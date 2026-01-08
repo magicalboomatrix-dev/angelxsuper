@@ -69,7 +69,6 @@ export default function Index() {
    }, []);
 
   const [showAppLink, setShowAppLink] = useState(true);
-  if (!showAppLink) return null;
  
   return (
     <div>
@@ -86,21 +85,34 @@ export default function Index() {
           </div>}
 
              
-         <div className="applinkMainDiv">
-          <div className="applinkdownload">
-            <div className="appimgtext">
-              <img src="/image/applinkimg.png" />
-              <div className="textlink">
-                <h4>AngelX Super</h4>
-                <p>India’s #1 Trusted USDT Exchange Platform.</p>
+         {showAppLink && (
+          <div className="applinkMainDiv">
+            <div className="applinkdownload">
+              <div className="appimgtext">
+                <img src="/image/applinkimg.png" alt="AngelX" />
+                <div className="textlink">
+                  <h4>AngelX Super</h4>
+                  <p>India’s #1 Trusted USDT Exchange Platform.</p>
+                </div>
               </div>
+  
+              <Link
+                href="AngelX.apk"
+                className="downloadbutton"
+                download
+              >
+                Download
+              </Link>
             </div>
-            <Link href="AngelX.apk" className="downloadbutton" download >Download</Link>
+  
+            <button
+              className="closeAppLink"
+              onClick={() => setShowAppLink(false)}
+            >
+              X
+            </button>
           </div>
-          <button className="closeAppLink" onClick={() => setShowAppLink(false)}>
-            X
-          </button>
-        </div>
+        )}
              
         <header className="header" style={{position: 'relative'}}>
             <div className="left">
