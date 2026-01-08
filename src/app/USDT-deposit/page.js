@@ -107,7 +107,7 @@ export default function USDTDeposit() {
               <div className="inside">
                 {/* NETWORK TABS */}
                 <div className="top">
-                  <p className="title">network</p>
+                  <p className="title">Network</p>
                   <div className="select-tbs">
                     <div
                       className={`tb ${activeTab === 'TRC20' ? 'active' : ''}`}
