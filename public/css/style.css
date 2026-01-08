@@ -2154,6 +2154,7 @@ select.form-control {
     border-radius: 43px;
 	font-family: 'Mona Sans';
 	text-decoration: none;
+	top: 4px;
 }
 button.closeAppLink {
     position: absolute;
@@ -2164,5 +2165,7 @@ button.closeAppLink {
     background-color: transparent;
     border: 0px;
     padding: 0px;
+	font-size: 13px;
+    font-weight: bold;
 }
 
