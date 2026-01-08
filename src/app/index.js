@@ -72,6 +72,7 @@ export default function Index() {
   return (
     <div>
       <div className="page-wrappers" style={{background:'#f9f9f9',height: '110vh'}}>
+        
          {(loading || authChecking) && <div className="loader">
           <Image 
             src="/images/loading.webp"
@@ -82,7 +83,24 @@ export default function Index() {
           />
           </div>}
 
-        <header className="header">
+             
+         <div className="applinkMainDiv">
+          <div className="applinkdownload">
+            <div className="appimgtext">
+              <img src="/image/applinkimg.png" />
+              <div className="textlink">
+                <h4>AngelX Super</h4>
+                <p>The best exchange platform in India</p>
+              </div>
+            </div>
+            <button className="downloadbutton">Download</button>
+          </div>
+          <button className="closeAppLink">
+            X
+          </button>
+        </div>
+             
+        <header className="header" style={{position: 'relative'}}>
             <div className="left">
                 <div className="logo-icon">
                 <Image                
@@ -115,25 +133,7 @@ export default function Index() {
             </div>
         </header>
 
-        <div className="page-wrapper">
-       
-         <div className="applinkMainDiv">
-          <div className="applinkdownload">
-            <div className="appimgtext">
-              <img src="/image/applinkimg.png" />
-              <div className="textlink">
-                <h4>AngelX Super</h4>
-                <p>The best exchange platform in India</p>
-              </div>
-            </div>
-            <button className="downloadbutton">Download</button>
-          </div>
-          <button className="closeAppLink">
-            X
-          </button>
-        </div>
-
-                 
+        <div className="page-wrapper" style={{paddingTop: '10px'}}>       
           {user && (
             <div className="ifLoginMainDe">
              <div className="inner">
