@@ -136,20 +136,20 @@ export default function Index() {
           {user && (
             <div className="ifLoginMainDe">
              <div className="inner">
-               <span className="labelTxtMain">Available Balance</span>
+               <span className="labelTxtMain"><b>Available Balance</b></span>
                <p style={{ fontSize: '14px'}}>
                  <span style={{ fontSize: 16, fontWeight: "600 !important" }} />  {(user.wallet?.available || 0).toFixed(2)} USDT 
                </p>
              </div>
              <div className="mainTwoInDiv">
                <div style={{ width: "50%" }}>
-                 <span className="labelTxtMain">Sell Pending</span>
+                 <span className="labelTxtMain"><b>Sell Pending</b></span>
                  <p>
                    <span /> {(user.wallet?.sellPending || 0).toFixed(2)} USDT
                  </p>
                </div>
                <div style={{ width: "50%" }}>
-                 <span className="labelTxtMain">Deposit Pending</span>
+                 <span className="labelTxtMain"><b>Deposit Pending</b></span>
                  <p>
                    <span /> {(user.wallet?.depositPending || 0).toFixed(2)} USDT
                  </p>
