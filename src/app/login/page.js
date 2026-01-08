@@ -42,17 +42,17 @@ export default function LoginPage() {
         <div className="page-wrappers full-height">
           <div className="page-wrapperss page-wrapper-ex page-wrapper-login">
             <section className="section-1">
-              <div className="image" style={{textAlign: 'center'}}>
+              <div className="image" style={{textAlign: 'center',paddingTop: '20px'}}>
                 <img
-                  src="/image/login-img1.png" // ✅ Added leading /
-                  style={{ width: "85%" }}
-                  alt="Login Illustration"
+                  src="/image/login_screen.png" // ✅ Added leading /
+                  style={{ width: "75%" }}
+                  alt="Login"
                 />
               </div>
             </section>
             <section className="section-3">
               <p className="title" style={{ textAlign: "center",paddingTop: 0 }}>
-                <b>Welcome to AngelX</b>
+                <b>Welcome to AngelX Super</b>
               </p>
               <p style={{ textAlign: "center" }}>
                 AngelX is the most trustable and exchange partner, the more you

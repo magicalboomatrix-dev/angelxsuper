@@ -167,7 +167,7 @@ export default function LoginAccount() {
             </div>
             <section className="section-1">
               <h3 className="title">
-                <b>Welcome to AngelX</b>
+                <b>Welcome to AngelX Super</b>
               </h3>
             <h4 style={{fontWeight: 'normal',fontSize: '16px',paddingBottom: '10px',color: '#696969'}}>
                 Exchange more, earn more, make your life better.

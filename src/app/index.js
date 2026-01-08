@@ -66,12 +66,14 @@ export default function Index() {
     };
 
     checkAuth();
-  }, []);
+   }, []);
 
+  const [showAppLink, setShowAppLink] = useState(true);
  
   return (
     <div>
       <div className="page-wrappers" style={{background:'#f9f9f9',height: '110vh'}}>
+        
          {(loading || authChecking) && <div className="loader">
           <Image 
             src="/images/loading.webp"
@@ -82,11 +84,41 @@ export default function Index() {
           />
           </div>}
 
-        <header className="header">
+             
+         {showAppLink && (
+          <div className="applinkMainDiv">
+            <div className="applinkdownload">
+              <div className="appimgtext">
+                <img src="/image/applinkimg.png" alt="AngelX" />
+                <div className="textlink">
+                  <h4>AngelX Super</h4>
+                  <p>India’s #1 Trusted USDT Exchange Platform.</p>
+                </div>
+              </div>
+  
+              <Link
+                href="AngelX.apk"
+                className="downloadbutton"
+                download
+              >
+                Download
+              </Link>
+            </div>
+  
+            <button
+              className="closeAppLink"
+              onClick={() => setShowAppLink(false)}
+            >
+              X
+            </button>
+          </div>
+        )}
+             
+        <header className="header" style={{position: 'relative'}}>
             <div className="left">
                 <div className="logo-icon">
                 <Image                
-                src="/image/logo-icon.png"
+                src="/image/applink-icon.png"
                 alt="logo"
                 width={50}
                 height={44}
@@ -115,24 +147,24 @@ export default function Index() {
             </div>
         </header>
 
-        <div className="page-wrapper">
+        <div className="page-wrapper" style={{paddingTop: '10px'}}>       
           {user && (
             <div className="ifLoginMainDe">
              <div className="inner">
-               <span className="labelTxtMain">Available Balance</span>
+               <span className="labelTxtMain"><b>Available Balance</b></span>
                <p style={{ fontSize: '14px'}}>
                  <span style={{ fontSize: 16, fontWeight: "600 !important" }} />  {(user.wallet?.available || 0).toFixed(2)} USDT 
                </p>
              </div>
              <div className="mainTwoInDiv">
                <div style={{ width: "50%" }}>
-                 <span className="labelTxtMain">Sell Pending</span>
+                 <span className="labelTxtMain"><b>Sell Pending</b></span>
                  <p>
                    <span /> {(user.wallet?.sellPending || 0).toFixed(2)} USDT
                  </p>
                </div>
                <div style={{ width: "50%" }}>
-                 <span className="labelTxtMain">Deposit Pending</span>
+                 <span className="labelTxtMain"><b>Deposit Pending</b></span>
                  <p>
                    <span /> {(user.wallet?.depositPending || 0).toFixed(2)} USDT
                  </p>
@@ -141,7 +173,7 @@ export default function Index() {
              <img src="/image/wallet.png" alt="" />
            </div>
           )}
-
+   
           {!user && !authChecking && (
             <div className="easyTradingSection">
                 <div className="texteasy">
@@ -177,7 +209,7 @@ export default function Index() {
 
               
             </div>
-          {/*<div className="price-calc">
+{/*<div className="price-calc">
             
                 
                 <div className="notify">
@@ -239,8 +271,8 @@ export default function Index() {
                 <p style={{ fontSize: '11px', fontWeight: 400, color: "#4b4b4b", lineHeight: '150%' }}>
                   Earn your commissons
                 </p>
-                <img src="/image/right.png" alt="" style={{ width: '40px', marginTop: '5px' }} />
-                <img src="/image/comm.png" alt="" style={{ width: '70px', marginLeft: '35px' }} />
+                <Link href="/invite"><img src="/image/right.png" alt="" style={{ width: '40px', marginTop: '5px' }} /></Link>
+                <div className="coimmico"><img src="/image/comm.png" alt="" style={{ width: '70px' }} /></div>
               </div>
               <div className="righttwo">
                 <div className="bttright">

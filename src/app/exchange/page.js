@@ -181,7 +181,7 @@ export default function Exchange() {
             <div className="left">
                 <div className="logo-icon">
                 <Image                
-                src="/image/logo-icon.png"
+                src="/image/applink-icon.png"
                 alt="logo"
                 width={50}
                 height={44}

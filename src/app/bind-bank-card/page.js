@@ -77,7 +77,7 @@ const handleSubmit = async () => {
   return (
     <div>
       <main>
-        <div className="page-wrappers bind-bank-card">
+        <div className="page-wrappers bind-bank-card full-height">
           <header className="header">
             <div className="brdc">
               <div className="back-btn">

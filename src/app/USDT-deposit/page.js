@@ -94,7 +94,7 @@ export default function USDTDeposit() {
           </header>
 
           <div className="page-wrapperss">
-            <section className="section-1">
+            <section className="section-1" style={{paddingTop: '37px'}}>
               <div className="bnr">
                 <img src="images/top-bnr.png" style={{ width: "100%", float: "left" }} />
               </div>
@@ -107,7 +107,7 @@ export default function USDTDeposit() {
               <div className="inside">
                 {/* NETWORK TABS */}
                 <div className="top">
-                  <p className="title">network</p>
+                  <p className="title">Network</p>
                   <div className="select-tbs">
                     <div
                       className={`tb ${activeTab === 'TRC20' ? 'active' : ''}`}

@@ -64,7 +64,7 @@ export default function HomePage() {
   return (
     <div>
       <main>
-        <div className="page-wrappers page-wrapper-ex home-wrappers">
+        <div className="page-wrappers page-wrapper-ex home-wrappers fullheight">
           <header className="header" style={{position: "relative"}}>
             <div className="left"></div>
             <div className="right">
@@ -92,7 +92,7 @@ export default function HomePage() {
             <section className="section-1">
               <div className="userpro">
                 <div className="pic">
-                  <img src="images/user-pic.png" />
+                  <img src="image/user-pic1.png" />
                 </div>
                 <h3>{user?.mobile || "+91 ******"}</h3>
               </div>
@@ -100,15 +100,15 @@ export default function HomePage() {
               {user ? (
                 <div className="tab-inl">
                   <div className="bx">
-                    <p>Available($)</p>
+                    <p>Available <br/> Balance</p>
                     <h3>{(user?.wallet?.available || 0).toFixed(2)}</h3>
                   </div>
                   <div className="bx">
-                    <p>Sell Pending($)</p>
+                    <p>Sell <br/> Pending </p>
                     <h3>{(user?.wallet?.sellPending || 0).toFixed(2)}</h3>
                   </div>
                   <div className="bx">
-                    <p>Deposit Pending($)</p>
+                    <p>Deposit <br/> Pending </p>
                     <h3>{(user?.wallet?.depositPending || 0).toFixed(2)}</h3>
                   </div>
                 </div>
