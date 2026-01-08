@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
 
 
 /*@font-face {
@@ -25,7 +27,7 @@
 
 body {
 	margin: 0;
-	font: 14px "Roboto", sans-serif;
+	font: 14px "Mona Sans", sans-serif;
 	background: #eeeef1;
     color: #000;    
 }
@@ -183,9 +185,9 @@ section.section-2 .rw .bx .image {
 section.section-2 .rw .bx .right .info h3 {
     padding-bottom: 5px;
     color: #000;
-    font-size: 15px;
+    -size: 15px;
     letter-spacing: .1px;
-	font-weight: 500;
+	-weight: 500;
 }
 
 section.section-2 .rw .bx .right .info p {
@@ -331,7 +333,7 @@ section.section-1a.banner-img {
     font-size: 45px;
     font-family: corsicasx6;
     font-weight: 600;
-    font-family: "Roboto", sans-serif;
+    font-family: "Mona Sans", sans-serif;
 	letter-spacing: -3px;
 	line-height: 40px;
 	padding: 15px 0 0px 0;
@@ -1059,7 +1061,7 @@ section.section-2.reffer {
     letter-spacing: 0;
     font-weight: 300;
 	padding-left: 0;
-	font-family: "Stack Sans Headline", sans-serif;
+	font-family: "Mona Sans", sans-serif;
 }
 
 section.section-2.reffer .bx .image h3 > img {
@@ -1158,7 +1160,7 @@ section.section-2.reffer .bx .arw img {
     font-size: 20px;
     font-weight: bold;
     border-radius: 5px;
-    font: 14px "Roboto", sans-serif;
+    font: 14px "Mona Sans", sans-serif;
     margin: 0 1px;
 }
 
@@ -1823,13 +1825,13 @@ section.section-4 .dflex-out .rw span.black {
 
 
 .mainHeadExchange p {
-    font-family: "Roboto", sans-serif;
+    font-family: "Mona Sans", sans-serif;
     font-size: 15px;
     font-weight: 500;
 }
 
 .mainHeadExchange h3 {
-    font-family: "Roboto", sans-serif;
+    font-family: "Mona Sans", sans-serif;
 	font-size: 27px;
     font-weight: 500;
     font-family: "Barlow Condensed", sans-serif;
@@ -1915,7 +1917,7 @@ section.section-4 .dflex-out .rw span.black {
     padding: 12px;
     position: relative;
 	margin-bottom: 10px;
-	font-family: "Stack Sans Headline", sans-serif;
+	font-family: "Mona Sans", sans-serif;
 	background: #fff;
 }
 
@@ -1929,13 +1931,13 @@ section.section-4 .dflex-out .rw span.black {
     font-size: 14px;
     font-weight: normal;
     color: #191919;
-    font-family: "Roboto", sans-serif;
+    font-family: "Mona Sans", sans-serif;
 }
 
 .ifLoginMainDe p span {
     font-size: 14px;
     font-weight: 700;    
-	font-family: "Stack Sans Headline", sans-serif !important;
+	font-family: "Mona Sans", sans-serif !important;
 }
 
 .mainTwoInDiv {
@@ -1948,7 +1950,7 @@ section.section-4 .dflex-out .rw span.black {
     font-weight: 400;
     padding-bottom: 2px;
     display: block;
-	font-family: "Stack Sans Headline", sans-serif;
+	font-family: "Mona Sans", sans-serif;
 }
 
 .ifLoginMainDe img {
