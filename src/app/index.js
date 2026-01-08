@@ -272,7 +272,7 @@ export default function Index() {
                   Earn your commissons
                 </p>
                 <Link href="/invite"><img src="/image/right.png" alt="" style={{ width: '40px', marginTop: '5px' }} /></Link>
-                <img src="/image/comm.png" alt="" style={{ width: '70px', marginLeft: '35px' }} />
+                <img src="/image/comm.png" alt="" style={{ width: '70px', marginLeft: '50px' }} />
               </div>
               <div className="righttwo">
                 <div className="bttright">
