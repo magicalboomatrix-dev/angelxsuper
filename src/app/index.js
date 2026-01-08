@@ -239,7 +239,7 @@ export default function Index() {
                 <p style={{ fontSize: '11px', fontWeight: 400, color: "#4b4b4b", lineHeight: '150%' }}>
                   Earn your commissons
                 </p>
-                <img src="/image/right.png" alt="" style={{ width: '40px', marginTop: '5px' }} />
+                <Link href="/invite"><img src="/image/right.png" alt="" style={{ width: '40px', marginTop: '5px' }} /></Link>
                 <img src="/image/comm.png" alt="" style={{ width: '70px', marginLeft: '35px' }} />
               </div>
               <div className="righttwo">
