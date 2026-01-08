@@ -2148,3 +2148,14 @@ select.form-control {
     color: #fff;
     border-radius: 43px;
 }
+button.closeAppLink {
+    position: absolute;
+    top: 5px;
+    color: #666;
+    right: 10px;
+    font-size: 10px;
+    background-color: transparent;
+    border: 0px;
+    padding: 0px;
+}
+
