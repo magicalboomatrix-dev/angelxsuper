@@ -100,15 +100,15 @@ export default function HomePage() {
               {user ? (
                 <div className="tab-inl">
                   <div className="bx">
-                    <p>Available($)</p>
+                    <p>Available <br/> Balance</p>
                     <h3>{(user?.wallet?.available || 0).toFixed(2)}</h3>
                   </div>
                   <div className="bx">
-                    <p>Sell Pending($)</p>
+                    <p>Sell <br/> Pending </p>
                     <h3>{(user?.wallet?.sellPending || 0).toFixed(2)}</h3>
                   </div>
                   <div className="bx">
-                    <p>Deposit Pending($)</p>
+                    <p>Deposit <br/> Pending </p>
                     <h3>{(user?.wallet?.depositPending || 0).toFixed(2)}</h3>
                   </div>
                 </div>
