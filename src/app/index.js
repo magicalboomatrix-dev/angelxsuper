@@ -177,7 +177,7 @@ export default function Index() {
 
               
             </div>
-          {/*<div className="price-calc">
+          <div className="price-calc">
             
                 
                 <div className="notify">
@@ -203,7 +203,7 @@ export default function Index() {
                     </div>
                   </div>
                 </div>
-              </div> */}
+              </div> 
             <div className="threeSectionSlider">
               <div>
                 <span>ETH USDT</span>
