@@ -2149,6 +2149,7 @@ select.form-control {
     color: #fff;
     border-radius: 43px;
 	font-family: 'Mona Sans';
+	text-decoration: none;
 }
 button.closeAppLink {
     position: absolute;
