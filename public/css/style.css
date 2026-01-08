@@ -1935,6 +1935,10 @@ section.section-4 .dflex-out .rw span.black {
     font-weight: 500;
 }
 
+.labelTxtMain b {
+    font-weight: 500;
+}
+
 .ifLoginMainDe p {
     font-size: 14px;
     font-weight: normal;
