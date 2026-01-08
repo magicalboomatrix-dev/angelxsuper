@@ -116,19 +116,7 @@ export default function Index() {
         </header>
 
         <div className="page-wrapper">
-        <div className="applinkMainDiv">
-         <div className="applinkdownload">
-           <div className="appimgtext">
-             <img src="/image/applinkimg.png" alt="" />
-             <div className="textlink">
-               <h4>Crypto Matrix</h4>
-               <p>The best exchange platform in India</p>
-             </div>
-           </div>
-           <button className="downloadbutton">Download</button>
-         </div>
-         <button className="closeAppLink">Download</button>
-       </div>
+       
 
 
                  
