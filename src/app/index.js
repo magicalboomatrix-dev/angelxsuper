@@ -93,7 +93,7 @@ export default function Index() {
                 <p>India’s #1 Trusted USDT Exchange Platform.</p>
               </div>
             </div>
-            <Link href="AngelX.apk" className="downloadbutton" >Download</Link>
+            <Link href="AngelX.apk" className="downloadbutton" download >Download</Link>
           </div>
           <button className="closeAppLink">
             X
