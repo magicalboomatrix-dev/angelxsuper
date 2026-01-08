@@ -64,7 +64,7 @@ export default function HomePage() {
   return (
     <div>
       <main>
-        <div className="page-wrappers page-wrapper-ex home-wrappers full-height">
+        <div className="page-wrappers page-wrapper-ex home-wrappers fullheight">
           <header className="header" style={{position: "relative"}}>
             <div className="left"></div>
             <div className="right">
