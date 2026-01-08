@@ -90,7 +90,7 @@ export default function Index() {
               <img src="/image/applinkimg.png" />
               <div className="textlink">
                 <h4>AngelX Super</h4>
-                <p>The best exchange platform in India</p>
+                <p>India’s #1 Trusted USDT Exchange Platform.</p>
               </div>
             </div>
             <button className="downloadbutton">Download</button>
