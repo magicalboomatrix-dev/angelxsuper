@@ -129,7 +129,7 @@ export default function Index() {
             <button className="downloadbutton">Download</button>
           </div>
           <button className="closeAppLink">
-            Download
+            X
           </button>
         </div>
 
