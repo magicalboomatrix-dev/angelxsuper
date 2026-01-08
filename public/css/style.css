@@ -2160,7 +2160,7 @@ select.form-control {
 button.closeAppLink {
     position: absolute;
     top: 5px;
-    color: #666;
+    color: #000;
     right: 10px;
     font-size: 10px;
     background-color: transparent;
