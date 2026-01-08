@@ -92,7 +92,7 @@ export default function HomePage() {
             <section className="section-1">
               <div className="userpro">
                 <div className="pic">
-                  <img src="images/user-pic.png" />
+                  <img src="image/user-pic1.png" />
                 </div>
                 <h3>{user?.mobile || "+91 ******"}</h3>
               </div>
