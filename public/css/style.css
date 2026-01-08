@@ -144,8 +144,8 @@ header.header .left {
 
 header.header .logo-icon {
     display: flex;
-    background: #161d1e;
-    padding: 5px 5px 10px 6px;
+    background: #01ba8e;
+    padding: 0;
     box-sizing: border-box;
     border-radius: 70px;
     height: 30px;
