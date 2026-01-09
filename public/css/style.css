@@ -2172,5 +2172,7 @@ button.closeAppLink {
 .coimmico {
     display: flex;
     justify-content: center;
+	padding-top: 5px;
+    padding-bottom: 0px;
 }
 
