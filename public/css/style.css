@@ -561,9 +561,9 @@ section.section-4 .dflex-out .text span.rs {
 
 section.section-4 .dflex-out .small {
     padding: 5px 0 0;
-    font-size: 16px;
+    font-size: 13px;
     color: #2f2f2f;
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Mona Sans", sans-serif;
 	font-weight: 500;
 }
 
@@ -1605,12 +1605,10 @@ header.header.setting-header {
 
 }
 
-
-
 section.section-4 .dflex-out .rw span.black {
     color: #000;
-	font-family: "Barlow Condensed", sans-serif;
-    font-size: 16px;
+    font-family: "Mona Sans", sans-serif;
+    font-size: 13px;
 }
 
 
