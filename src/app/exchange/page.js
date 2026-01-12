@@ -228,7 +228,7 @@ export default function Exchange() {
               <div className="select-amt" style={{ position: "relative",background: '#fff' }}>
                     <input
                       type="number"
-                      placeholder="Please enter the amount"
+                      placeholder="0.00"
                       value={usdtAmount}
                       onChange={handleUsdtChange}
                       style={{
