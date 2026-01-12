@@ -219,7 +219,7 @@ export default function Exchange() {
               <div className="logoImg"><img src="/image/grn_logo1.png" /></div>                   
             </div>
 
-            <div style={{padding: '10px 10px 14px 16px'}}>
+            <div style={{padding: '10px 15px 14px 15px'}}>
             <section className="section-3">
               <p className="title" style={{ textAlign: "left", paddingTop: '5px' }}>
                 <b>Flash Exchange</b>
