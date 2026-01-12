@@ -552,8 +552,7 @@ section.section-4 .dflex-out .text span.b {
     color: #000;
     font-size: 28px;
     font-weight: 600;
-    font-family: 'Geist Mono';
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Mona Sans", sans-serif;
 }
 
 section.section-4 .dflex-out .text span.rs {
@@ -2054,7 +2053,7 @@ section.section-4 .dflex-out .rw span.black {
 .select-amt input[type="number"],
 select.form-control {
 	font-size: 15px !important;
-    font-family: 'Barlow Condensed';
+    font-family: "Mona Sans", sans-serif;
 	font-weight: 400;
 }
 
