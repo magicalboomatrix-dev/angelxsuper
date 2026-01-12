@@ -18,6 +18,7 @@ export default function Layout({ children }) {
       <head>
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" type="image/x-icon" href="/image/logo-icon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet"
