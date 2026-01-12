@@ -3,8 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import LayoutClient from "./LayoutClient";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+//const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+//const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata = {
   title: "AngelX Super",
@@ -18,7 +18,7 @@ export default function Layout({ children }) {
       <head>
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" type="image/x-icon" href="/image/logo-icon.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
