@@ -10,7 +10,7 @@ export const metadata = {
   title: "AngelX Super",
   description: "AngelX is the most trustable exchange partner. Exchange more, earn more!",
   manifest: "/manifest.json",
-  viewport: "width=device-width, user-scalable=no",
+  
 };
 
 export default function Layout({ children }) {
