@@ -25,7 +25,9 @@
          url('fonts/CorsicaSXSemiBold.svg#CorsicaSXSemiBold') format('svg');
 } 
  */
-
+body {
+  touch-action: pan-y;
+}
 body {
 	margin: 0;
 	font: 14px "Mona Sans", sans-serif;
