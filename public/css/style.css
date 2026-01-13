@@ -2147,7 +2147,7 @@ select.form-control {
     font-size: 10px;
     color: #fff;
     border-radius: 43px;
-	font-family: 'Mona Sans';
+	font-family: "Mona Sans", sans-serif;
 	text-decoration: none;
 	position: relative;
 	top: 4px;
