@@ -1,8 +1,10 @@
-
+import { Geist, Geist_Mono } from "next/font/google";
 //import "./globals.css";
 import Script from "next/script";
 import LayoutClient from "./LayoutClient";
 
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata = {
   title: "AngelX Super",
@@ -17,11 +19,20 @@ export default function Layout({ children }) {
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" type="image/x-icon" href="/image/logo-icon.png" />
         
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Monda:wght@400..700&display=swap"
+          rel="stylesheet"
+        />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
         <meta name="description" content="" />
       </head>
-      <body >
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <LayoutClient>{children}</LayoutClient>
 
         <Script src="https://code.jquery.com/jquery-3.6.0.js" strategy="beforeInteractive" />
