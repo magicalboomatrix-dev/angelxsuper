@@ -6,12 +6,12 @@ import LayoutClient from "./LayoutClient";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
-{/* export const metadata = {
+ export const metadata = {
   title: "AngelX Super",
   description: "AngelX is the most trustable exchange partner. Exchange more, earn more!",
   manifest: "/manifest.json",
   
-}; */}
+}; 
 
 export default function Layout({ children }) {
   return (
