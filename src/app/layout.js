@@ -50,6 +50,8 @@ export default function Layout({ children }) {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
 
+            <link rel="stylesheet" href="/css/style.css" type="text/css" />
+
         {/* ======================
             EMBEDDED CSS TO STOP MOBILE ZOOM
             ====================== */}
@@ -70,7 +72,31 @@ export default function Layout({ children }) {
             font-family: "Roboto", sans-serif;
           }
 
-          
+          /* Prevent iOS auto-zoom on inputs */
+          input, textarea, select, button {
+            font-size: 16px !important;
+          }
+
+          /* Responsive container */
+          .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 15px;
+          }
+
+          /* Common fixes */
+          .main-wrapper {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+          }
+
+          img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+          }
         `}</style>
       </head>
 
