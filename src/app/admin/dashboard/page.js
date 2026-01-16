@@ -59,7 +59,7 @@ export default function AdminDashboard() {
         return (
           <>
             <div className={styles.pageHeader}>
-              <h2 className={styles.pageTitle}>Dashboard Overview</h2>
+              <h2 className={styles.pageTitle}>Dashboard Overviews</h2>
               <p className={styles.pageSubtitle}>Welcome back, here's what's happening today.</p>
             </div>
 
