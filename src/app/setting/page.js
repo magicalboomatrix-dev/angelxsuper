@@ -38,7 +38,7 @@ export default function SettingPage() {
                   <Link href="https://t.me/angelxsuper">
                     <div className="image">
                       <h3>
-                        <img src="images/s-icon1.jpg" /> Customer service
+                        <img src="images/s-icon1n.jpg" /> Customer service
                       </h3>
                     </div>
                     <div className="arw">
@@ -50,7 +50,7 @@ export default function SettingPage() {
                   <Link href="">
                     <div className="image">
                       <h3>
-                        <img src="images/s-icon2.jpg" /> Business coorperation
+                        <img src="images/s-icon2n.jpg" /> Business coorperation
                       </h3>
                     </div>
                     <div className="arw">
@@ -62,7 +62,7 @@ export default function SettingPage() {
                   <Link href="">
                     <div className="image">
                       <h3>
-                        <img src="images/s-icon3.jpg" /> Version
+                        <img src="images/s-icon3n.jpg" /> Version
                       </h3>
                     </div>
                     <div className="arw">
@@ -74,7 +74,7 @@ export default function SettingPage() {
                   <Link href="https://angelxsuper.vercel.app/AngelX.apk">
                     <div className="image">
                       <h3>
-                        <img src="images/s-icon4.jpg" /> Intall the official version
+                        <img src="images/s-icon4n.jpg" /> Intall the official version
                       </h3>
                     </div>
                     <div className="arw">
@@ -86,7 +86,7 @@ export default function SettingPage() {
                   <Link href="">
                     <div className="image">
                       <h3>
-                        <img src="images/s-icon5.jpg" /> Reset transaction password
+                        <img src="images/s-icon5n.jpg" /> Reset transaction password
                       </h3>
                     </div>
                     <div className="arw">
