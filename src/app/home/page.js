@@ -69,7 +69,7 @@ export default function HomePage() {
             <div className="left"></div>
             <div className="right">
               { /* <img src="image/24-hours-support.png" /> */ }
-              <a href="https://wa.me/12366055665?text=Hello%2C%20AngleX Team!">
+              <a href="https://t.me/angelxsuper">
                 <Image                
                 src="/image/customer-care-icon1.png"
                 alt="customer"
