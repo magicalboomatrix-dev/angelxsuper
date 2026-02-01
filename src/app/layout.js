@@ -20,7 +20,7 @@ export default function Layout({ children }) {
       <head>
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" type="image/x-icon" href="/image/logo-icon.png" />
-        
+        <meta name="google-site-verification" content="WJJgbZoAjQ2OYURThYg5MzQzF8ZIpJwIfitC2E_t6Fg" />
 
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
@@ -33,6 +33,25 @@ export default function Layout({ children }) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
         <meta name="description" content="" />
+           <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17922858127"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17922858127');
+</script>
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGHVYRBG7S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGHVYRBG7S');
+</script>
+ 
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <LayoutClient>{children}</LayoutClient>
